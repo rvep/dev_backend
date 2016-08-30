@@ -46,7 +46,7 @@ firebase:
     project_number: 514116175895
     firebase_url: https://rvep-dev.firebaseio.com
     project_id: rvep-dev
-    storage_bucket:
+    storage_bucket: rvep-dev.appspot.com
 
   client:
     oauth_client:
