@@ -1,9 +1,9 @@
-package io.abnd.rvep.google.rest;
+package io.abnd.rvep.security.rest;
 
 import io.abnd.rvep.security.model.impl.GoogleAuthToken;
 import io.abnd.rvep.security.model.impl.GoogleAuthTokenVerification;
 import io.abnd.rvep.security.model.intf.AuthTokenVerification;
-import io.abnd.rvep.security.service.impl.GoogleAuthVerifier;
+import io.abnd.rvep.security.service.impl.FirebaseAuthVerifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +13,11 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 
 @RestController
-@RequestMapping("/api/google/auth")
-public class GoogleAuthHandler {
+@RequestMapping("/api/firebase/auth")
+public class FirebaseAuthController {
 
     @Autowired
-    private GoogleAuthVerifier glAuthVerifier;
+    private FirebaseAuthVerifier glAuthVerifier;
 
     @ResponseBody
     @CrossOrigin(origins = "http://localhost:3000")

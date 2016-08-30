@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 
 @Service
-public class GoogleAuthVerifier implements AuthVerifier {
+public class FirebaseAuthVerifier implements AuthVerifier {
 
     public boolean verify(AuthToken token) throws GeneralSecurityException, IOException {
         //FirebaseConfig.getInstance().verifyIdToken(token.getTokenId());
