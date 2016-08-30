@@ -1,28 +1,51 @@
 package io.abnd.rvep.security.service.impl;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseToken;
-import com.google.firebase.tasks.Task;
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.util.ByteStreams;
+import io.abnd.rvep.config.properties.FirebaseProperties;
 import io.abnd.rvep.security.model.intf.AuthToken;
 import io.abnd.rvep.security.service.intf.AuthVerifier;
+import io.jsonwebtoken.Jwts;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
+import java.io.*;
 import java.security.GeneralSecurityException;
 
 @Service
 public class FirebaseAuthVerifier implements AuthVerifier {
 
-    Logger logger = LoggerFactory.getLogger(this.getClass());
+    private static final Logger logger = LoggerFactory.getLogger(FirebaseAuthVerifier.class);
+
+    @Autowired
+    private FirebaseProperties fbProps;
 
     public boolean verify(AuthToken token) throws GeneralSecurityException, IOException {
-        Task<FirebaseToken> fbTask = FirebaseAuth.getInstance().verifyIdToken(token.getTokenId());
+        // get google credential
+        InputStream stream = new FileInputStream("src/main/resources/service-account.json");
+        ByteArrayOutputStream streamCopy = new ByteArrayOutputStream();
+        ByteStreams.copy(stream, streamCopy);
+        stream.close();
 
-        fbTask.getResult();
+        GoogleCredential gc = GoogleCredential.fromStream(
+                new ByteArrayInputStream(streamCopy.toByteArray()),
+                new NetHttpTransport(),
+                GsonFactory.getDefaultInstance());
 
-        return fbTask.isSuccessful();
+        try {
+            Jwts.parser().setSigningKey(gc.getServiceAccountPrivateKey()).parse(token.getTokenId());
+        } catch(Exception e) {
+            // log
+            logger.info("Firebase auth token verification error: ");
+            logger.info(e.getMessage());
+            // claims may have been tampered with
+            return false;
+        }
+
+        return true;
     }
 
 }
