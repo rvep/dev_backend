@@ -19,12 +19,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.security.GeneralSecurityException;
-import java.security.KeyFactory;
 import java.security.PublicKey;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
-import java.security.spec.X509EncodedKeySpec;
-import java.util.Base64;
 import java.util.Map;
 
 @Service
