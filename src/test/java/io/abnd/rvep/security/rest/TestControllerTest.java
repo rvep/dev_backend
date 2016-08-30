@@ -14,21 +14,19 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
-import io.abnd.rvep.RVEP;
 import io.abnd.rvep.security.model.impl.RoleCategory;
 import io.abnd.rvep.security.model.impl.RvepRole;
 import io.abnd.rvep.security.service.intf.ServiceTest;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes=RVEP.class)
-@WebAppConfiguration
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
 public class TestControllerTest {
 
 	@Autowired
