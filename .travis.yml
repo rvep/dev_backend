@@ -3,6 +3,9 @@ dist: trusty
 
 addons:
   mariadb: '10.0'
+  artifacts:
+    paths:
+      - $HOME/data/db/scripts/
 
 language: java
 
