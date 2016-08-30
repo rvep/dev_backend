@@ -3,9 +3,6 @@ dist: trusty
 
 addons:
   mariadb: '10.0'
-  artifacts:
-    paths:
-      - $HOME/data/db/scripts/
 
 language: java
 
@@ -21,7 +18,7 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script:
-  - mysql -u root < $HOME/data/db/scripts/add-user.sql
-  - mysql -u root < $HOME/data/db/scripts/create-db.sql
-  - mysql -u root < $HOME/data/db/scripts/init-db-tables.sql
+  - mysql -u root < ./data/db/scripts/add-user.sql
+  - mysql -u root < ./data/db/scripts/create-db.sql
+  - mysql -u root < ./data/db/scripts/init-db-tables.sql
   - ./gradlew assemble check --info
