@@ -44,12 +44,12 @@ spring.jpa:
 firebase:
   project_info:
     project_number: 514116175895
-    firebase_url: https://rvep-1212.firebaseio.com
-    project_id: rvep-1212
-    storage_bucket: rvep-1212.appspot.com
+    firebase_url: https://rvep-dev.firebaseio.com
+    project_id: rvep-dev
+    storage_bucket:
 
   client:
     oauth_client:
-        client_id: 514116175895-e720oe3s3vbflo89l6k56sp6ojj08vps.apps.googleusercontent.com
+        client_id: 820006897104-060cdi3i1kj99ltb22adh8e017a7mel3.apps.googleusercontent.com
     api_key:
-        current_key: AIzaSyCHGsA7DeZsLStWXPsOhi2cYkTRuuS5XEY
+        current_key: dxRWH55iSv3SK3rb3demxI8U

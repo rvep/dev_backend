@@ -30,13 +30,15 @@ public class FirebaseAuthVerifier implements AuthVerifier {
         ByteStreams.copy(stream, streamCopy);
         stream.close();
 
-        GoogleCredential gc = GoogleCredential.fromStream(
+        GoogleCredential googleCredential = GoogleCredential.fromStream(
                 new ByteArrayInputStream(streamCopy.toByteArray()),
                 new NetHttpTransport(),
                 GsonFactory.getDefaultInstance());
 
         try {
-            Jwts.parser().setSigningKey(gc.getServiceAccountPrivateKey()).parse(token.getTokenId());
+            Jwts.parser()
+                    .setSigningKey(googleCredential.getServiceAccountPrivateKey())
+                    .parse(token.getTokenId());
         } catch(Exception e) {
             // log
             logger.info("Firebase auth token verification error: ");

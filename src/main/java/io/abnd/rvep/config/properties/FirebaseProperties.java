@@ -22,7 +22,7 @@ public class FirebaseProperties {
 
     @Value("${firebase.client.oauth_client.client_id}")
     private String clientId;
-    
+
     @Value("${firebase.client.api_key.current_key}")
     private String currentkey;
 
