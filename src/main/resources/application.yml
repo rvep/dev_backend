@@ -51,16 +51,5 @@ firebase:
   client:
     oauth_client:
         client_id: 514116175895-e720oe3s3vbflo89l6k56sp6ojj08vps.apps.googleusercontent.com
-        client_type: 3
     api_key:
         current_key: AIzaSyCHGsA7DeZsLStWXPsOhi2cYkTRuuS5XEY
-    services:
-      analytics_service:
-        status: 1
-      appinvite_service:
-        status: 1
-        other_platform_oauth_client:
-      ads_service:
-        status: 2
-
-  configuration_version: 1
