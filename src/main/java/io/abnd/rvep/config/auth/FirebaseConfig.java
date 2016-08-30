@@ -24,12 +24,14 @@ public class FirebaseConfig {
         logger.info("FIREBASE INIT");
 
         // init firebase
-        /*FirebaseOptions options = new FirebaseOptions.Builder()
-                .setServiceAccount(new FileInputStream("src/main/resources/google-services.json"))
-                .setDatabaseUrl(this.fbProps.getStorageBucket())
-                .build();
+        if (FirebaseApp.getApps().size() == 0) {
+            FirebaseOptions options = new FirebaseOptions.Builder()
+                    .setServiceAccount(new FileInputStream("src/main/resources/service-account.json"))
+                    .setDatabaseUrl(this.fbProps.getStorageBucket())
+                    .build();
 
-        FirebaseApp.initializeApp(options);*/
+            FirebaseApp.initializeApp(options);
+        }
     }
 
 }
