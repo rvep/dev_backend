@@ -17,10 +17,8 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-before-script:
+script:
   - mysql -u root < $HOME/data/db/scripts/add-user.sql
   - mysql -u root < $HOME/data/db/scripts/create-db.sql
   - mysql -u root < $HOME/data/db/scripts/init-db-tables.sql
-
-script:
   - ./gradlew assemble check --info
