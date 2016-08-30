@@ -14,11 +14,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
 import java.security.PublicKey;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 import java.util.Map;
@@ -84,7 +88,7 @@ public class FirebaseAuthVerifier implements AuthVerifier {
      * @return
      * @throws GeneralSecurityException
      */
-    private PublicKey getPublicKey(Map.Entry<String, JsonElement> entry) throws GeneralSecurityException {
+    private PublicKey getPublicKey(Map.Entry<String, JsonElement> entry) throws GeneralSecurityException, IOException {
         String publicKeyPem = entry.getValue().getAsString()
                 .replaceAll("-----BEGIN (.*)-----", "")
                 .replaceAll("-----END (.*)----", "")
@@ -94,12 +98,12 @@ public class FirebaseAuthVerifier implements AuthVerifier {
 
         logger.info(publicKeyPem);
 
-        // build public key
-        byte [] decoded = Base64.getDecoder().decode(publicKeyPem);
-        X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(decoded);
-        PublicKey publicKey = KeyFactory.getInstance("RSA").generatePublic(x509KeySpec);
+        // generate x509 cert
+        InputStream inputStream = new ByteArrayInputStream(entry.getValue().getAsString().getBytes("UTF-8"));
+        CertificateFactory cf = CertificateFactory.getInstance("X.509");
+        X509Certificate cert = (X509Certificate)cf.generateCertificate(inputStream);
 
-        return publicKey;
+        return cert.getPublicKey();
     }
 
     /**
