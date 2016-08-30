@@ -9,19 +9,27 @@ import org.springframework.stereotype.Component;
 public class FirebaseProperties {
 
     @Value("${firebase.project_info.project_number}")
-    private String project_number;
+    private String projectNumber;
 
     @Value("${firebase.project_info.firebase_url}")
-    private String firebase_url;
+    private String firebaseUrl;
 
     @Value("${firebase.project_info.project_id}")
-    private String project_id;
+    private String projectId;
 
     @Value("${firebase.project_info.storage_bucket}")
-    private String storage_bucket;
+    private String storageBucket;
 
-    public String getFirebaseUrl() { return this.firebase_url; }
-    public String getProjectNumber() { return this.project_number; }
-    public String getProjectId() { return this.project_id; }
-    public String getStorageBucket() { return this.storage_bucket; }
+    @Value("${firebase.client.oauth_client.client_id}")
+    private String clientId;
+    
+    @Value("${firebase.client.api_key.current_key}")
+    private String currentkey;
+
+    public String getFirebaseUrl() { return this.firebaseUrl; }
+    public String getProjectNumber() { return this.projectNumber; }
+    public String getProjectId() { return this.projectId; }
+    public String getStorageBucket() { return this.storageBucket; }
+    public String getClientId() { return this.clientId; }
+    public String getCurrentkey() { return this.currentkey; }
 }
