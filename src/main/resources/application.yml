@@ -1,0 +1,66 @@
+# ------------------------------
+# - logging
+# ------------------------------
+
+logging:
+  level.org.springframework.web: ERROR
+  level.org.hibernate: ERROR
+  file: rvep.spring.log
+
+# ------------------------------
+# - enable remote debug
+# ------------------------------
+
+spring.devtools.remote.secret: mysecret
+
+# ------------------------------
+# - datasource / jpa / hibernate
+# ------------------------------
+
+spring.datasource:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://mariadb:3306/rvep
+  username: rvep
+  password: password
+
+spring.jpa:
+  hibernate:
+    ddl-auto: none
+    naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+  properties:
+    hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate.show_sql: false
+    hibernate.format_sql: true
+    hibernate.hbm2ddl.auto: update
+    hibernate.apply_to_ddl: false
+    hibernate.connection.CharSet: UTF-8
+    hibernate.connection.useUnicode: true
+
+# ------------------------------
+# - firebase
+# ------------------------------
+
+firebase:
+  project_info:
+    project_number: 514116175895
+    firebase_url: https://rvep-1212.firebaseio.com
+    project_id: rvep-1212
+    storage_bucket: rvep-1212.appspot.com
+
+  client:
+    oauth_client:
+        client_id: 514116175895-e720oe3s3vbflo89l6k56sp6ojj08vps.apps.googleusercontent.com
+        client_type: 3
+    api_key:
+        current_key: AIzaSyCHGsA7DeZsLStWXPsOhi2cYkTRuuS5XEY
+    services:
+      analytics_service:
+        status: 1
+      appinvite_service:
+        status: 1
+        other_platform_oauth_client:
+      ads_service:
+        status: 2
+
+  configuration_version: 1

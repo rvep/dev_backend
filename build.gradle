@@ -1,0 +1,81 @@
+// backend build.gradle
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		// spring
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE'
+		classpath 'org.springframework:springloaded:1.2.6.RELEASE'
+        classpath 'com.google.gms:google-services:3.0.0'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+repositories {
+	mavenCentral()
+}
+
+eclipse {
+	classpath {
+		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		 containers('org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8')
+	}
+}
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("${buildDir}/classes/main/")
+    }
+}
+
+jar {
+	baseName = 'spring-boot-angular2'
+	version = '1.0.0'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+configurations {
+	dev
+}
+
+dependencies {
+	// spring boot
+	compile 'org.springframework.boot:spring-boot-starter-data-rest'
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	// spring dev tools
+	dev 'org.springframework.boot:spring-boot-devtools'
+
+	// mysql
+	compile 'mysql:mysql-connector-java:5.1.38'
+	// firebase
+	compile 'com.google.firebase:firebase-server-sdk:3.0.1'
+	// google gson
+	compile 'com.google.code.gson:gson:2.5'
+	// json path
+	compile 'com.jayway.jsonpath:json-path:2.1.0'
+	// logging
+	compile 'org.slf4j:slf4j-api:1.7.13'
+
+	// spring-boot test
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
+// run spring boot app
+bootRun {
+	//addResources = true
+	classpath = sourceSets.main.runtimeClasspath + configurations.dev
+}
+
+// run all task
+task runAll {}
+runAll.dependsOn(bootRun)

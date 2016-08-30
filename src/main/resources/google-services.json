@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "514116175895",
+    "firebase_url": "https://rvep-1212.firebaseio.com",
+    "project_id": "rvep-1212",
+    "storage_bucket": "rvep-1212.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514116175895:android:b432053e67d50595",
+        "android_client_info": {
+          "package_name": "io.abnd.rvep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514116175895-e720oe3s3vbflo89l6k56sp6ojj08vps.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "514116175895-ohqig5ehcn2qb4k9ikmgj65m65bm2ipr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHGsA7DeZsLStWXPsOhi2cYkTRuuS5XEY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
