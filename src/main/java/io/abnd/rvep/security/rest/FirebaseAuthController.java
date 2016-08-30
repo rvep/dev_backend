@@ -1,7 +1,7 @@
 package io.abnd.rvep.security.rest;
 
-import io.abnd.rvep.security.model.impl.GoogleAuthToken;
-import io.abnd.rvep.security.model.impl.GoogleAuthTokenVerification;
+import io.abnd.rvep.security.model.impl.FirebaseAuthToken;
+import io.abnd.rvep.security.model.impl.FirebaseAuthTokenVerification;
 import io.abnd.rvep.security.model.intf.AuthTokenVerification;
 import io.abnd.rvep.security.service.impl.FirebaseAuthVerifier;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,21 +17,21 @@ import java.security.GeneralSecurityException;
 public class FirebaseAuthController {
 
     @Autowired
-    private FirebaseAuthVerifier glAuthVerifier;
+    private FirebaseAuthVerifier fbAuthVerifier;
 
     @ResponseBody
     @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/verify", method = RequestMethod.POST, headers = "Content-Type=application/json", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<AuthTokenVerification> verify(@RequestBody GoogleAuthToken glAuthToken) throws GeneralSecurityException, IOException {
+    public ResponseEntity<AuthTokenVerification> verify(@RequestBody FirebaseAuthToken glAuthToken) throws GeneralSecurityException, IOException {
         // init return
-        AuthTokenVerification glAuthTokenVerification = new GoogleAuthTokenVerification();
+        AuthTokenVerification fbAuthTokenVerification = new FirebaseAuthTokenVerification();
 
         // verify token
-        boolean isVerified = this.glAuthVerifier.verify(glAuthToken);
-        glAuthTokenVerification.setIsVerified(isVerified);
+        boolean isVerified = this.fbAuthVerifier.verify(glAuthToken);
+        fbAuthTokenVerification.setIsVerified(isVerified);
 
         // return json response
-        ResponseEntity<AuthTokenVerification> response = new ResponseEntity<>(glAuthTokenVerification, HttpStatus.OK);
+        ResponseEntity<AuthTokenVerification> response = new ResponseEntity<>(fbAuthTokenVerification, HttpStatus.OK);
         return response;
     }
 
