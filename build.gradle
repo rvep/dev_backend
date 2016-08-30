@@ -79,3 +79,7 @@ bootRun {
 // run all task
 task runAll {}
 runAll.dependsOn(bootRun)
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.0'
+}
