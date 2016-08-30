@@ -59,6 +59,8 @@ dependencies {
 	compile 'mysql:mysql-connector-java:5.1.38'
 	// firebase
 	compile 'com.google.firebase:firebase-server-sdk:[3.0.0,)'
+	// jjwt
+	compile 'io.jsonwebtoken:jjwt:0.6.0'
 	// google gson
 	compile 'com.google.code.gson:gson:2.5'
 	// json path
