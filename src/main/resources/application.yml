@@ -19,7 +19,7 @@ spring.devtools.remote.secret: mysecret
 
 spring.datasource:
   driverClassName: com.mysql.jdbc.Driver
-  url: jdbc:mysql://mariadb:3306/rvep
+  url: jdbc:mysql://localhost:3306/rvep
   username: rvep
   password: password
 
