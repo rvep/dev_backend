@@ -23,4 +23,4 @@ before-script:
   - mysql -u root < $HOME/data/db/scripts/init-db-tables.sql
 
 script:
-  - ./gradlew assemble check
+  - ./gradlew assemble check --info
