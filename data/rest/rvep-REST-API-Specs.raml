@@ -1,0 +1,1205 @@
+#%RAML 1.0
+title: RVEP
+version: v0.0.1-SNAPSHOT
+baseUri: http://localhost:8080/api
+types:
+  # rvep_user types
+  token:
+    type: object
+    properties:
+      token: string
+  rvepUser:
+    type: object
+    properties:
+      username: string
+      enabled: string
+  userProfile:
+    type: object
+    properties:
+      username: string
+      email: string
+      description: string
+      picture: string
+      firstName: string
+      lastName: string
+      enabled: string
+  rvepChip:
+    type: object
+    properties:
+      email: string
+      chip: string
+      enabled: string
+  userContact:
+    type: object
+    properties:
+      username: string
+      contactUsername: string
+      enabled: string
+  userRole:
+    type: object
+    properties:
+      username: string
+      role: string
+      enabled: string
+  userEventRole:
+    type: object
+    properties:
+      username: string
+      role: string
+      eventProfileId: number
+      enabled: string
+  invite:
+    type: object
+    properties:
+      accepted: string
+      username: string
+      eventProfileId: number
+      enabled: string
+  rvepEvent:
+    type: object
+    properties:
+      enabled: string
+      todoListId: number
+      eventProfileId: number
+  eventProfile:
+    type: object
+    properties:
+      id: number
+      title: string
+      description: string
+      picture: string
+      isPublic: string
+      isOpenEnrollment: string
+      hashId: string
+      personLimit: number
+      enabled: string
+      rvepEventId: number
+  eventItem:
+    type: object
+    properties:
+      id: number
+      dateTime: string
+      description: string
+      title: string
+      eventProfileId: number
+      locationId: number
+      enabled: string
+  eventItemTask:
+    type: object
+    properties:
+      id: number
+      status: string
+      username: string
+      eventItemId: number
+      todoListId: number
+      todoListItemId: number
+      enabled: string
+  rvepLocation:
+    type: object
+    properties:
+      id: number
+      title: string
+      description: string
+      geolat: number
+      geolng: number
+      enabled: string
+  todoList:
+    type: object
+    properties:
+      id: number
+      title: string
+      description: string
+      enabled: string
+  todoListItem:
+    type: object
+    properties:
+      id: number
+      title: string
+      description: string
+      status: string
+      todoListId: number
+      enabled: string
+  suggestion:
+    type: object
+    properties:
+      id: number
+      title: string
+      description: string
+      status: string
+      username: string
+      enabled: string
+  rollingVote:
+    type: object
+    properties:
+      id: number
+      value: string
+      username: string
+      eventProfileId: number
+      suggestionId: number
+      enabled: string
+/login:
+  get:
+    queryParameters:
+        userProfile:
+          displayName: userProfile
+          type: userProfile
+          description: user profile
+          required: true
+        rvepChip:
+            displayName: rvepChip
+            type: rvepChip
+            description: RVEP Chip
+            required: true
+    responses:
+      200:
+        body:
+          application/json:
+      400:
+        body:
+          application/json:
+      401:
+        body:
+          application/json:
+      404:
+        body:
+          application/json:
+  /oauth/google/callback:
+    put:
+      queryParameters:
+        token:
+          displayName: token
+          type: token
+          description: google api token
+          required: true
+/user:
+  /add:
+      post:
+          queryParameters:
+              userProfile:
+                displayName: userProfile
+                type: userProfile
+                description: user profile
+                required: true
+              rvepChip:
+                displayName: rvepChip
+                type: rvepChip
+                description: rvep chip
+                required: true
+  /{username}:
+    /profile:
+      get:
+        queryParameters:
+          userProfile:
+            displayName: userProfile
+            type: userProfile
+            description: user profile
+            required: true
+        responses:
+          200:
+            body:
+              application/json:
+          400:
+            body:
+              application/json:
+          401:
+            body:
+              application/json:
+          404:
+            body:
+              application/json:
+      /update:
+          put:
+            queryParameters:
+              userProfile:
+                displayName: userProfile
+                type: userProfile
+                description: user profile
+                required: true
+            responses:
+              200:
+                body:
+                  application/json:
+              400:
+                body:
+                  application/json:
+              401:
+                body:
+                  application/json:
+              404:
+                body:
+                  application/json:
+    /event:
+      /all:
+          get:
+            queryParameters:
+              userProfile:
+                displayName: userProfile
+                type: userProfile
+                description: user profile
+                required: true
+            responses:
+              200:
+                body:
+                  application/json:
+              400:
+                body:
+                  application/json:
+              401:
+                body:
+                  application/json:
+              404:
+                body:
+                  application/json:
+      /{eventProfileId}:
+        /profile:
+            get:
+              queryParameters:
+                eventProfile:
+                  displayName: eventProfile
+                  type: eventProfile
+                  description: event profile
+                  required: true
+              responses:
+                200:
+                  body:
+                    application/json:
+                400:
+                  body:
+                    application/json:
+                401:
+                  body:
+                    application/json:
+                404:
+                  body:
+                    application/json:
+      /suggestion:
+       /all:
+           get:
+             queryParameters:
+               userProfile:
+                 displayName: userProfile
+                 type: userProfile
+                 description: user profile
+                 required: true
+             responses:
+               200:
+                 body:
+                   application/json:
+               400:
+                 body:
+                   application/json:
+               401:
+                 body:
+                   application/json:
+               404:
+                 body:
+                   application/json:
+       /add:
+           post:
+             queryParameters:
+               suggestion:
+                 displayName: suggestion
+                 type: suggestion
+                 description: user suggestion
+                 required: true
+             responses:
+               200:
+                 body:
+                   application/json:
+               400:
+                 body:
+                   application/json:
+               401:
+                 body:
+                   application/json:
+               404:
+                 body:
+                   application/json:
+           /{suggestionId}:
+              /update:
+                  put:
+                    queryParameters:
+                      suggestion:
+                        displayName: suggestion
+                        type: suggestion
+                        description: user suggestion
+                        required: true
+                    responses:
+                      200:
+                        body:
+                          application/json:
+                      400:
+                        body:
+                          application/json:
+                      401:
+                        body:
+                          application/json:
+                      404:
+                        body:
+                          application/json:
+      /invite:
+        /all:
+            get:
+              queryParameters:
+                userProfile:
+                  displayName: userProfile
+                  type: userProfile
+                  description: user profile
+                  required: true
+              responses:
+                200:
+                  body:
+                    application/json:
+                400:
+                  body:
+                    application/json:
+                401:
+                  body:
+                    application/json:
+                404:
+                  body:
+                    application/json:
+        /{inviteId}:
+          /update:
+              put:
+                queryParameters:
+                  invite:
+                    displayName: invite
+                    type: invite
+                    description: user event invite
+                    required: true
+                responses:
+                  200:
+                    body:
+                      application/json:
+                  400:
+                    body:
+                      application/json:
+                  401:
+                    body:
+                      application/json:
+                  404:
+                    body:
+                      application/json:
+      /rollingVote:
+        /all:
+            get:
+              queryParameters:
+                userProfile:
+                  displayName: userProfile
+                  type: userProfile
+                  description: user profile
+                  required: true
+              responses:
+                200:
+                  body:
+                    application/json:
+                400:
+                  body:
+                    application/json:
+                401:
+                  body:
+                    application/json:
+                404:
+                  body:
+                    application/json:
+        /add:
+            post:
+              queryParameters:
+                rollingVote:
+                  displayName: rollingVote
+                  type: rollingVote
+                  description: user rolling vote
+                  required: true
+              responses:
+                200:
+                  body:
+                    application/json:
+                400:
+                  body:
+                    application/json:
+                401:
+                  body:
+                    application/json:
+                404:
+                  body:
+                    application/json:
+        /{rollingVoteId}:
+          /profile:
+              get:
+                queryParameters:
+                  rollingVote:
+                    displayName: rollingVote
+                    type: rollingVote
+                    description: rolling vote profile
+                    required: true
+                responses:
+                  200:
+                    body:
+                      application/json:
+                  400:
+                    body:
+                      application/json:
+                  401:
+                    body:
+                      application/json:
+                  404:
+                    body:
+                      application/json:
+          /update:
+              put:
+                queryParameters:
+                  rollingVote:
+                    displayName: rollingVote
+                    type: rollingVote
+                    description: user rolling vote
+                    required: true
+                responses:
+                  200:
+                    body:
+                      application/json:
+                  400:
+                    body:
+                      application/json:
+                  401:
+                    body:
+                      application/json:
+                  404:
+                    body:
+                      application/json:
+      /eventItemTask:
+        /all:
+            get:
+              queryParameters:
+                userProfile:
+                  displayName: userProfile
+                  type: userProfile
+                  description: user profile
+                  required: true
+              responses:
+                200:
+                  body:
+                    application/json:
+                400:
+                  body:
+                    application/json:
+                401:
+                  body:
+                    application/json:
+                404:
+                  body:
+                    application/json:
+        /{eventItemTaskId}:
+          /profile:
+              get:
+                queryParameters:
+                  eventItemTask:
+                    displayName: eventItemTask
+                    type: eventItemTask
+                    description: event item task
+                    required: true
+                responses:
+                  200:
+                    body:
+                      application/json:
+                  400:
+                    body:
+                      application/json:
+                  401:
+                    body:
+                      application/json:
+                  404:
+                    body:
+                      application/json:
+/event:
+  /add:
+      post:
+        queryParameters:
+          rvepEvent:
+            displayName: rvepEvent
+            type: rvepEvent
+            description: rvep event
+            required: true
+        responses:
+          200:
+            body:
+              application/json:
+          400:
+            body:
+              application/json:
+          401:
+            body:
+              application/json:
+          404:
+            body:
+              application/json:
+  /{eventId}:
+    /profile:
+      get:
+        queryParameters:
+          eventProfile:
+            displayName: eventProfile
+            type: eventProfile
+            description: event profile
+            required: true
+        responses:
+          200:
+            body:
+              application/json:
+          400:
+            body:
+              application/json:
+          401:
+            body:
+              application/json:
+          404:
+            body:
+              application/json:
+    /update:
+        put:
+          queryParameters:
+            rvepEvent:
+              displayName: rvepEvent
+              type: rvepEvent
+              description: rvep event
+              required: true
+          responses:
+            200:
+              body:
+                application/json:
+            400:
+              body:
+                application/json:
+            401:
+              body:
+                application/json:
+            404:
+              body:
+                application/json:
+    /eventItem:
+      /add:
+          post:
+            queryParameters:
+              eventItem:
+                displayName: eventItem
+                type: eventItem
+                description: eventItem
+                required: true
+            responses:
+              200:
+                body:
+                  application/json:
+              400:
+                body:
+                  application/json:
+              401:
+                body:
+                  application/json:
+              404:
+                body:
+                  application/json:
+      /all:
+        get:
+          queryParameters:
+            eventProfile:
+              displayName: eventProfile
+              type: eventProfile
+              description: event profile
+              required: true
+          responses:
+            200:
+              body:
+                application/json:
+            400:
+              body:
+                application/json:
+            401:
+              body:
+                application/json:
+            404:
+              body:
+                application/json:
+      /{eventItemId}:
+        /profile:
+            get:
+              queryParameters:
+                eventItem:
+                  displayName: eventItem
+                  type: eventItem
+                  description: event item
+                  required: true
+              responses:
+                200:
+                  body:
+                    application/json:
+                400:
+                  body:
+                    application/json:
+                401:
+                  body:
+                    application/json:
+                404:
+                  body:
+                    application/json:
+        /update:
+            put:
+              queryParameters:
+                eventItem:
+                  displayName: eventItem
+                  type: eventItem
+                  description: eventItem
+                  required: true
+              responses:
+                200:
+                  body:
+                    application/json:
+                400:
+                  body:
+                    application/json:
+                401:
+                  body:
+                    application/json:
+                404:
+                  body:
+                    application/json:
+        /location:
+          /add:
+              post:
+                queryParameters:
+                  rvepLocation:
+                    displayName: rvepLocation
+                    type: rvepLocation
+                    description: event item location
+                    required: true
+                responses:
+                  200:
+                    body:
+                      application/json:
+                  400:
+                    body:
+                      application/json:
+                  401:
+                    body:
+                      application/json:
+                  404:
+                    body:
+                      application/json:
+          /{locationId}:
+            /profile:
+                get:
+                  queryParameters:
+                    rvepLocation:
+                      displayName: rvepLocation
+                      type: rvepLocation
+                      description: event item location
+                      required: true
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                    400:
+                      body:
+                        application/json:
+                    401:
+                      body:
+                        application/json:
+                    404:
+                      body:
+                        application/json:
+            /update:
+                put:
+                  queryParameters:
+                    rvepLocation:
+                      displayName: rvepLocation
+                      type: rvepLocation
+                      description: event item location
+                      required: true
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                    400:
+                      body:
+                        application/json:
+                    401:
+                      body:
+                        application/json:
+                    404:
+                      body:
+                        application/json:
+        /task:
+          /add:
+              post:
+                queryParameters:
+                  eventItemTask:
+                    displayName: eventItemTask
+                    type: eventItemTask
+                    description: event item task
+                    required: true
+                responses:
+                  200:
+                    body:
+                      application/json:
+                  400:
+                    body:
+                      application/json:
+                  401:
+                    body:
+                      application/json:
+                  404:
+                    body:
+                      application/json:
+          /all:
+              get:
+                queryParameters:
+                  eventItem:
+                    displayName: eventItem
+                    type: eventItem
+                    description: event item
+                    required: true
+                responses:
+                  200:
+                    body:
+                      application/json:
+                  400:
+                    body:
+                      application/json:
+                  401:
+                    body:
+                      application/json:
+                  404:
+                    body:
+                      application/json:
+          /{eventItemTaskId}:
+            /profile:
+                get:
+                  queryParameters:
+                    eventItemTask:
+                      displayName: eventItem Task
+                      type: eventItemTask
+                      description: event item task
+                      required: true
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                    400:
+                      body:
+                        application/json:
+                    401:
+                      body:
+                        application/json:
+                    404:
+                      body:
+                        application/json:
+            /update:
+                put:
+                  queryParameters:
+                    eventItemTask:
+                      displayName: eventItemTask
+                      type: eventItemTask
+                      description: event item task
+                      required: true
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                    400:
+                      body:
+                        application/json:
+                    401:
+                      body:
+                        application/json:
+                    404:
+                      body:
+                        application/json:
+        /suggestion:
+          /all:
+              get:
+                queryParameters:
+                  eventItem:
+                    displayName: eventTtem
+                    type: eventItem
+                    description: event item
+                    required: true
+                responses:
+                  200:
+                    body:
+                      application/json:
+                  400:
+                    body:
+                      application/json:
+                  401:
+                    body:
+                      application/json:
+                  404:
+                    body:
+                      application/json:
+          /{suggestionId}:
+            /profile:
+                get:
+                  queryParameters:
+                    suggestion:
+                      displayName: suggestion
+                      type: suggestion
+                      description: event item suggestion
+                      required: true
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                    400:
+                      body:
+                        application/json:
+                    401:
+                      body:
+                        application/json:
+                    404:
+                      body:
+                        application/json:
+            /update:
+                put:
+                  queryParameters:
+                    suggestion:
+                      displayName: suggestion
+                      type: suggestion
+                      description: event item suggestion
+                      required: true
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                    400:
+                      body:
+                        application/json:
+                    401:
+                      body:
+                        application/json:
+                    404:
+                      body:
+                        application/json:
+            /rollingVote:
+              /all:
+                  get:
+                    queryParameters:
+                      eventItem:
+                        displayName: eventItem
+                        type: eventItem
+                        description: event item suggestion rolling vote
+                        required: true
+                    responses:
+                      200:
+                        body:
+                          application/json:
+                      400:
+                        body:
+                          application/json:
+                      401:
+                        body:
+                          application/json:
+                      404:
+                        body:
+                          application/json:
+              /{rollingVoteId}:
+                /profile:
+                    get:
+                      queryParameters:
+                        rollingVote:
+                          displayName: rollingVote
+                          type: rollingVote
+                          description: event item suggestion rolling vote
+                          required: true
+                      responses:
+                        200:
+                          body:
+                            application/json:
+                        400:
+                          body:
+                            application/json:
+                        401:
+                          body:
+                            application/json:
+                        404:
+                          body:
+                            application/json:
+                /update:
+                    put:
+                      queryParameters:
+                        rollingVote:
+                          displayName: rollingVote
+                          type: rollingVote
+                          description: event item suggestion rolling vote
+                          required: true
+                      responses:
+                        200:
+                          body:
+                            application/json:
+                        400:
+                          body:
+                            application/json:
+                        401:
+                          body:
+                            application/json:
+                        404:
+                          body:
+                            application/json:
+        /rollingVote:
+          /all:
+              get:
+                queryParameters:
+                  eventItem:
+                    displayName: eventItem
+                    type: eventItem
+                    description: event item
+                    required: true
+                responses:
+                  200:
+                    body:
+                      application/json:
+                  400:
+                    body:
+                      application/json:
+                  401:
+                    body:
+                      application/json:
+                  404:
+                    body:
+                      application/json:
+          /{rollingVoteId}:
+            /profile:
+                get:
+                  queryParameters:
+                    rollingVote:
+                      displayName: rollingVote
+                      type: rollingVote
+                      description: event item rolling vote
+                      required: true
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                    400:
+                      body:
+                        application/json:
+                    401:
+                      body:
+                        application/json:
+                    404:
+                      body:
+                        application/json:
+            /update:
+                put:
+                  queryParameters:
+                    rollingVote:
+                      displayName: rollingVote
+                      type: rollingVote
+                      description: event item rolling vote
+                      required: true
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                    400:
+                      body:
+                        application/json:
+                    401:
+                      body:
+                        application/json:
+                    404:
+                      body:
+                        application/json:
+    /suggestion:
+      /all:
+        get:
+          queryParameters:
+            eventProfile:
+              displayName: event profile
+              type: eventProfile
+              description: event profile
+              required: true
+          responses:
+            200:
+              body:
+                application/json:
+            400:
+              body:
+                application/json:
+            401:
+              body:
+                application/json:
+            404:
+              body:
+                application/json:
+      /{suggestionId}:
+        /profile:
+            get:
+              queryParameters:
+                suggestion:
+                  displayName: suggestion
+                  type: suggestion
+                  description: event suggestion
+                  required: true
+              responses:
+                200:
+                  body:
+                    application/json:
+                400:
+                  body:
+                    application/json:
+                401:
+                  body:
+                    application/json:
+                404:
+                  body:
+                    application/json:
+        /update:
+            put:
+              queryParameters:
+                suggestion:
+                  displayName: suggestion
+                  type: suggestion
+                  description: event suggestion
+                  required: true
+              responses:
+                200:
+                  body:
+                    application/json:
+                400:
+                  body:
+                    application/json:
+                401:
+                  body:
+                    application/json:
+                404:
+                  body:
+                    application/json:
+        /rollingVote:
+          /all:
+              get:
+                queryParameters:
+                  suggestion:
+                    displayName: suggestion
+                    type: suggestion
+                    description: event suggestion
+                    required: true
+                responses:
+                  200:
+                    body:
+                      application/json:
+                  400:
+                    body:
+                      application/json:
+                  401:
+                    body:
+                      application/json:
+                  404:
+                    body:
+                      application/json:
+          /{rollingVoteId}:
+            /profile:
+                get:
+                  queryParameters:
+                    rollingVote:
+                      displayName: rollingVote
+                      type: rollingVote
+                      description: event suggestion rolling vote
+                      required: true
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                    400:
+                      body:
+                        application/json:
+                    401:
+                      body:
+                        application/json:
+                    404:
+                      body:
+                        application/json:
+            /update:
+                put:
+                  queryParameters:
+                    rollingVote:
+                      displayName: rollingVote
+                      type: rollingVote
+                      description: event suggestion rolling vote
+                      required: true
+                  responses:
+                    200:
+                      body:
+                        application/json:
+                    400:
+                      body:
+                        application/json:
+                    401:
+                      body:
+                        application/json:
+                    404:
+                      body:
+                        application/json:
+    /rollingVote:
+      /all:
+        get:
+          queryParameters:
+            eventProfile:
+              displayName: event profile
+              type: eventProfile
+              description: event profile
+              required: true
+          responses:
+            200:
+              body:
+                application/json:
+            400:
+              body:
+                application/json:
+            401:
+              body:
+                application/json:
+            404:
+              body:
+                application/json:
+      /{rollingVoteId}:
+        /profile:
+          get:
+            queryParameters:
+              rollingVote:
+                displayName: rollingVote
+                type: rollingVote
+                description: event rollingVote
+                required: true
+            responses:
+              200:
+                body:
+                  application/json:
+              400:
+                body:
+                  application/json:
+              401:
+                body:
+                  application/json:
+              404:
+                body:
+                  application/json:
+        /update:
+            put:
+              queryParameters:
+                rollingVote:
+                  displayName: rollingVote
+                  type: rollingVote
+                  description: event rolling vote
+                  required: true
+              responses:
+                200:
+                  body:
+                    application/json:
+                400:
+                  body:
+                    application/json:
+                401:
+                  body:
+                    application/json:
+                404:
+                  body:
+                    application/json:
