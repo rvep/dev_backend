@@ -24,6 +24,7 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Map;
 
+
 @Service
 public class FirebaseAuthVerifier implements AuthVerifier {
 
@@ -49,7 +50,7 @@ public class FirebaseAuthVerifier implements AuthVerifier {
         // loop map of keys finding one that verifies
         for (Map.Entry<String, JsonElement> entry: publicKeys.entrySet()) {
             // log
-            logger.info("attempting jwt id token validation with: ");
+            logger.info("attempting jwt id token verification with: ");
 
             try {
                 // trying next key
@@ -84,6 +85,7 @@ public class FirebaseAuthVerifier implements AuthVerifier {
      * @param entry
      * @return
      * @throws GeneralSecurityException
+     * @throws IOException
      */
     private PublicKey getPublicKey(Map.Entry<String, JsonElement> entry) throws GeneralSecurityException, IOException {
         String publicKeyPem = entry.getValue().getAsString()
