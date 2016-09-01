@@ -28,6 +28,8 @@ used for webclient [dev_frontend](https://github.com/rvep/dev_frontend)
     - `$ mysql -u root -p < create-db.sql`
     - `$ mysql -u root -p < init-db-tables.sql`
 * `$ gradle clean assemble check bootRun`
+* once the server is up and running, you can test with curl
+    * `$ curl -w '\n' localhost:8080/api/test/get/roles`
 
 ## contribute
 
