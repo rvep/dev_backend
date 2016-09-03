@@ -60,7 +60,7 @@ public class FirebaseAuthVerifier implements AuthVerifier {
                 PublicKey publicKey = getPublicKey(entry);
 
                 // validate claim set
-                Jwts.parser().setSigningKey(publicKey).parse(token.getTokenId());
+                Jwts.parser().setSigningKey(publicKey).parse(token.getIdToken());
 
                 // success, we can return
                 return true;

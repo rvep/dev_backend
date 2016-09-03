@@ -4,11 +4,11 @@ import io.abnd.rvep.security.model.intf.AuthToken;
 
 public class FirebaseAuthToken implements AuthToken {
 
-    private String tokenId;
+    private String idToken;
 
-    public String getTokenId() {
-        return this.tokenId;
+    public String getIdToken() {
+        return this.idToken;
     }
-    public void setTokenId(String tokenId) { this.tokenId = tokenId; }
+    public void setIdToken(String idToken) { this.idToken = idToken; }
 
 }

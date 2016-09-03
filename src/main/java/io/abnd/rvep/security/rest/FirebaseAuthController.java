@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 
 @RestController
-@RequestMapping("/api/firebase/auth")
+@RequestMapping("/api/auth/firebase")
 public class FirebaseAuthController {
 
     @Autowired
