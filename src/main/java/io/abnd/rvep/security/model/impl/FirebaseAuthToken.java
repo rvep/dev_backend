@@ -6,9 +6,11 @@ public class FirebaseAuthToken implements AuthToken {
 
     private String idToken;
 
+    @Override
     public String getIdToken() {
         return this.idToken;
     }
+    @Override
     public void setIdToken(String idToken) { this.idToken = idToken; }
 
 }
