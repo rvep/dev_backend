@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import io.abnd.rvep.security.model.impl.RoleCategory;
-import io.abnd.rvep.security.model.impl.RvepRole;
+import io.abnd.rvep.security.model.RoleCategory;
+import io.abnd.rvep.security.model.RvepRole;
 import io.abnd.rvep.security.service.intf.ServiceTest;
 
 @RestController

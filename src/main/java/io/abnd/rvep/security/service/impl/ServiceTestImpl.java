@@ -10,16 +10,16 @@ import javax.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.abnd.rvep.security.dao.RoleCategoryDao;
-import io.abnd.rvep.security.model.impl.RoleCategory;
-import io.abnd.rvep.security.model.impl.RvepRole;
+import io.abnd.rvep.security.dao.intf.RoleCategoryDAO;
+import io.abnd.rvep.security.model.RoleCategory;
+import io.abnd.rvep.security.model.RvepRole;
 import io.abnd.rvep.security.service.intf.ServiceTest;
 
 @Service
 public class ServiceTestImpl implements ServiceTest {
 	
 	@Autowired
-	private RoleCategoryDao roleCategoryDAO;
+	private RoleCategoryDAO roleCategoryDAO;
 	
 	@PersistenceContext
 	private EntityManager em;

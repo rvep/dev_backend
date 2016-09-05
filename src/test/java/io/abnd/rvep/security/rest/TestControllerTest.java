@@ -21,8 +21,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
-import io.abnd.rvep.security.model.impl.RoleCategory;
-import io.abnd.rvep.security.model.impl.RvepRole;
+import io.abnd.rvep.security.model.RoleCategory;
+import io.abnd.rvep.security.model.RvepRole;
 import io.abnd.rvep.security.service.intf.ServiceTest;
 
 @RunWith(SpringJUnit4ClassRunner.class)
