@@ -9,21 +9,21 @@
 -- select database
 use rvep;
 
--- role categories
-insert into role_category (id, name, enabled) value (1000, 'app', 1);
-insert into role_category (id, name, enabled) value (1100, 'event', 1);
+-- rvep_ categories
+insert into rvep_roll_category (id, name, enabled) value (1000, 'app', 1);
+insert into rvep_roll_category (id, name, enabled) value (1100, 'event', 1);
 
--- app roles
-insert into role (name, enabled, role_category_id) values ('ROLE_USER', 1, 1000);
-insert into role (name, enabled, role_category_id) values ('ROLE_ANONYMOUS', 1, 1000);
-insert into role (name, enabled, role_category_id) values ('ROLE_ADMIN', 1, 1000);
+-- app rvep_s
+insert into rvep_roll (name, enabled, rvep_category_id) values ('ROLE_USER', 1, 1000);
+insert into rvep_roll (name, enabled, rvep__category_id) values ('ROLE_ANONYMOUS', 1, 1000);
+insert into rvep_roll (name, enabled, rvep__category_id) values ('ROLE_ADMIN', 1, 1000);
 
--- event roles
-insert into role (name, enabled, role_category_id) values ('ROLE_CREATOR', 1, 1100);
-insert into role (name, enabled, role_category_id) values ('ROLE_PLANNER', 1, 1100);
-insert into role (name, enabled, role_category_id) values ('ROLE_TASKER', 1, 1100);
-insert into role (name, enabled, role_category_id) values ('ROLE_ATTENDE', 1, 1100);
-insert into role (name, enabled, role_category_id) values ('ROLE_BYSTANDER', 1, 1100);
+-- event rvep_s
+insert into rvep_roll (name, enabled, rvep_category_id) values ('ROLE_CREATOR', 1, 1100);
+insert into rvep_roll (name, enabled, rvep_category_id) values ('ROLE_PLANNER', 1, 1100);
+insert into rvep_roll (name, enabled, rvep_category_id) values ('ROLE_TASKER', 1, 1100);
+insert into rvep_roll (name, enabled, rvep_category_id) values ('ROLE_ATTENDE', 1, 1100);
+insert into rvep_roll (name, enabled, rvep_category_id) values ('ROLE_BYSTANDER', 1, 1100);
 
 -- auth providers
 insert into auth_provider (name, enabled) values ('google', 1);

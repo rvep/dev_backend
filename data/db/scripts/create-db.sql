@@ -64,16 +64,16 @@ CREATE TABLE role_category
     enabled TINYINT(1) DEFAULT '1' NOT NULL
 );
 CREATE UNIQUE INDEX role_category_name_uindex ON role_category (name);
-CREATE TABLE role
+CREATE TABLE rvep_role
 (
     id INT(10) unsigned PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     enabled TINYINT(1) DEFAULT '1' NOT NULL,
     role_category_id INT(10) unsigned NOT NULL,
-    CONSTRAINT role_role_category_id_fk FOREIGN KEY (role_category_id) REFERENCES role_category (id) ON DELETE CASCADE
+    CONSTRAINT rvep_role_role_category_id_fk FOREIGN KEY (role_category_id) REFERENCES role_category (id) ON DELETE CASCADE
 );
-CREATE UNIQUE INDEX role_name_uindex ON role (name);
-CREATE INDEX role_role_category_id_fk ON role (role_category_id);
+CREATE UNIQUE INDEX role_name_uindex ON rvep_role (name);
+CREATE INDEX rvep_role_role_category_id_fk ON rvep_role (role_category_id);
 CREATE TABLE rvep_event
 (
     id INT(10) unsigned PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -83,24 +83,24 @@ CREATE TABLE rvep_event
 CREATE TABLE rvep_user_role
 (
     id INT(10) unsigned PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    role_id INT(10) unsigned NOT NULL,
+    rvep_role_id INT(10) unsigned NOT NULL,
     rvep_user_id INT(10) unsigned NOT NULL,
-    CONSTRAINT rvep_user_role_role_id_fk FOREIGN KEY (role_id) REFERENCES role (id) ON DELETE CASCADE,
+    CONSTRAINT rvep_user_role_rvep_role_id_fk FOREIGN KEY (rvep_role_id) REFERENCES rvep_role (id) ON DELETE CASCADE,
     CONSTRAINT rvep_user_role_rvep_user_rvep_user_id_fk FOREIGN KEY (rvep_user_id) REFERENCES rvep_user (id) ON DELETE CASCADE
 );
-CREATE INDEX rvep_user_role_role_id_fk ON rvep_user_role (role_id);
+CREATE INDEX rvep_user_role_rvep_role_id_fk ON rvep_user_role (rvep_role_id);
 CREATE INDEX rvep_user_role_rvep_user_rvep_user_id_fk ON rvep_user_role (rvep_user_id);
 CREATE TABLE rvep_user_event_role
 (
     id INT(10) unsigned PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    role_id INT(10) unsigned NOT NULL,
+    rvep_role_id INT(10) unsigned NOT NULL,
     rvep_event_id INT(10) unsigned NOT NULL,
     rvep_user_id INT(10) unsigned NOT NULL,
-    CONSTRAINT rvep_user_event_role_role_id_fk FOREIGN KEY (role_id) REFERENCES role (id) ON DELETE CASCADE,
+    CONSTRAINT rvep_user_event_role_rvep_role_id_fk FOREIGN KEY (rvep_role_id) REFERENCES rvep_role (id) ON DELETE CASCADE,
     CONSTRAINT rvep_user_event_role_rvep_event_id_fk FOREIGN KEY (rvep_event_id) REFERENCES rvep_event (id) ON DELETE CASCADE,
     CONSTRAINT rvep_user_event_role_rvep_user_id_fk FOREIGN KEY (rvep_user_id) REFERENCES rvep_user (id) ON DELETE CASCADE
 );
-CREATE INDEX rvep_user_event_role_role_id_fk ON rvep_user_event_role (role_id);
+CREATE INDEX rvep_user_event_role_rvep_role_id_fk ON rvep_user_event_role (rvep_role_id);
 CREATE INDEX rvep_user_event_role_rvep_event_id_fk ON rvep_user_event_role (rvep_event_id);
 CREATE INDEX rvep_user_event_role_rvep_user_id_fk ON rvep_user_event_role (rvep_user_id);
 CREATE TABLE rvep_user_contact

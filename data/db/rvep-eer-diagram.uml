@@ -1,255 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>DATABASE</ID>
-  <OriginalElement>96d8acc4-8911-4bcf-81ff-0f3882e00b7f</OriginalElement>
+  <OriginalElement>c3403396-451c-4244-95e0-9bac1e823fe0</OriginalElement>
   <nodes>
-    <node x="705.0356770833334" y="150.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.suggestion</node>
-    <node x="1276.5356770833332" y="472.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_profile</node>
-    <node x="408.5" y="460.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list_item</node>
-    <node x="0.0" y="958.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.hibernate_sequence</node>
-    <node x="411.03567708333344" y="150.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list</node>
-    <node x="3237.3005208333334" y="778.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_contact_invite</node>
-    <node x="2472.035677083333" y="778.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list_item_assignment</node>
-    <node x="788.5356770833334" y="518.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_suggestion</node>
-    <node x="0.0" y="150.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_location</node>
-    <node x="2726.035677083333" y="767.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_invite</node>
-    <node x="2334.535677083333" y="161.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rolling_vote</node>
-    <node x="1452.7856770833332" y="184.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event</node>
-    <node x="316.3539062499997" y="778.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_item_todo_list</node>
-    <node x="1950.2755208333333" y="518.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_role</node>
-    <node x="53.5" y="449.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_item</node>
-    <node x="3423.3005208333334" y="518.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_auth_provider</node>
-    <node x="1602.5356770833332" y="506.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_event_role</node>
-    <node x="1022.5356770833333" y="506.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_todo_list</node>
-    <node x="3003.3005208333334" y="790.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_contact</node>
-    <node x="2184.2755208333333" y="506.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.invite</node>
-    <node x="2755.539583333333" y="184.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user</node>
-    <node x="1734.5356770833332" y="173.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.role</node>
-    <node x="1744.5356770833332" y="0.0">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.role_category</node>
-    <node x="2438.2755208333333" y="506.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_event_rolling_vote</node>
-    <node x="2914.9255208333334" y="506.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_profile</node>
-    <node x="3476.8005208333334" y="184.5">96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.auth_provider</node>
+    <node x="3111.741861979167" y="790.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_item_todo_list</node>
+    <node x="1138.0045572916667" y="178.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_role</node>
+    <node x="1986.9508463541667" y="484.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_profile</node>
+    <node x="680.5" y="778.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_invite</node>
+    <node x="3344.78125" y="154.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_location</node>
+    <node x="1474.8795572916667" y="520.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.invite</node>
+    <node x="51.25" y="532.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_auth_provider</node>
+    <node x="2793.575846354167" y="472.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list_item</node>
+    <node x="2928.53125" y="154.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list</node>
+    <node x="1229.8795572916667" y="520.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_event_role</node>
+    <node x="2292.950846354167" y="520.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_todo_list</node>
+    <node x="455.5" y="802.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_contact</node>
+    <node x="945.5" y="790.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list_item_assignment</node>
+    <node x="3118.575846354167" y="460.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_item</node>
+    <node x="0.0" y="975.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.hibernate_sequence</node>
+    <node x="0.0" y="190.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.auth_provider</node>
+    <node x="1719.8795572916667" y="520.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_event_rolling_vote</node>
+    <node x="1709.8795572916667" y="166.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rolling_vote</node>
+    <node x="2061.2373046875" y="190.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event</node>
+    <node x="2537.950846354167" y="532.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_suggestion</node>
+    <node x="2643.53125" y="154.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.suggestion</node>
+    <node x="744.7373046875" y="190.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user</node>
+    <node x="1004.8795572916667" y="532.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_role</node>
+    <node x="1148.0045572916667" y="0.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.role_category</node>
+    <node x="210.5" y="790.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_contact_invite</node>
+    <node x="543.875" y="520.0">c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_profile</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_suggestion" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.suggestion">
-      <point x="-53.5" y="-50.0" />
-      <point x="0.0" y="84.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_contact_invite" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_profile">
+      <point x="56.25" y="-64.0" />
+      <point x="379.25" y="758.0" />
+      <point x="572.0" y="758.0" />
+      <point x="-84.375" y="64.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_invite" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.invite">
-      <point x="-31.75" y="-73.0" />
-      <point x="2821.285677083333" y="707.0" />
-      <point x="2301.2755208333333" y="707.0" />
-      <point x="0.0" y="61.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_event_role" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_role">
+      <point x="0.0" y="-64.0" />
+      <point x="1342.3795572916667" y="440.0" />
+      <point x="1306.7545572916667" y="440.0" />
+      <point x="56.25" y="64.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_invite" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user">
-      <point x="31.75" y="-73.0" />
-      <point x="2884.785677083333" y="727.0" />
-      <point x="2894.0505208333334" y="727.0" />
-      <point x="2894.0505208333334" y="429.0" />
-      <point x="2873.239583333333" y="429.0" />
-      <point x="10.699999999999818" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_invite" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user">
+      <point x="-30.625" y="-76.0" />
+      <point x="772.375" y="758.0" />
+      <point x="789.1875" y="758.0" />
+      <point x="789.1875" y="440.0" />
+      <point x="836.9873046875" y="440.0" />
+      <point x="-10.25" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_event_rolling_vote" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user">
-      <point x="78.0" y="-61.5" />
-      <point x="2633.2755208333333" y="419.0" />
-      <point x="2830.4395833333333" y="419.0" />
-      <point x="-32.09999999999991" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list_item" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list">
+      <point x="0.0" y="-112.0" />
+      <point x="2946.075846354167" y="440.0" />
+      <point x="3061.03125" y="440.0" />
+      <point x="0.0" y="88.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_auth_provider" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.auth_provider">
-      <point x="53.5" y="-50.0" />
-      <point x="0.0" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_item" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event">
+      <point x="-81.25" y="-124.0" />
+      <point x="3199.825846354167" y="360.0" />
+      <point x="2253.4248046875" y="360.0" />
+      <point x="89.6875" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_todo_list" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user">
-      <point x="78.0" y="-61.5" />
-      <point x="1217.5356770833332" y="389.0" />
-      <point x="2766.239583333333" y="389.0" />
-      <point x="-96.30000000000018" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_role" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_role">
+      <point x="51.25" y="-52.0" />
+      <point x="1158.6295572916667" y="440.0" />
+      <point x="1194.2545572916667" y="440.0" />
+      <point x="-56.25" y="64.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.role" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.role_category">
-      <point x="0.0" y="-61.5" />
-      <point x="0.0" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_event_rolling_vote" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user">
+      <point x="-75.0" y="-64.0" />
+      <point x="1757.3795572916667" y="400.0" />
+      <point x="918.9873046875" y="400.0" />
+      <point x="71.75" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_profile" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user">
-      <point x="0.0" y="-61.5" />
-      <point x="3031.9255208333334" y="419.0" />
-      <point x="2894.639583333333" y="419.0" />
-      <point x="32.09999999999991" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_todo_list" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user">
+      <point x="-75.0" y="-64.0" />
+      <point x="2330.450846354167" y="390.0" />
+      <point x="939.4873046875" y="390.0" />
+      <point x="92.25" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_suggestion" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event">
-      <point x="53.5" y="-50.0" />
-      <point x="949.0356770833334" y="359.0" />
-      <point x="1492.9106770833332" y="359.0" />
-      <point x="-66.875" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_invite" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event">
+      <point x="91.875" y="-76.0" />
+      <point x="894.875" y="748.0" />
+      <point x="1976.4508463541667" y="748.0" />
+      <point x="1976.4508463541667" y="430.0" />
+      <point x="2125.2998046875" y="430.0" />
+      <point x="-38.4375" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_event_role" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user">
-      <point x="78.0" y="-61.5" />
-      <point x="1797.5356770833332" y="399.0" />
-      <point x="2787.639583333333" y="399.0" />
-      <point x="-74.90000000000009" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_event_rolling_vote" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event">
+      <point x="75.0" y="-64.0" />
+      <point x="1907.3795572916667" y="420.0" />
+      <point x="2099.6748046875" y="420.0" />
+      <point x="-64.0625" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_todo_list" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list">
-      <point x="-78.0" y="-61.5" />
-      <point x="1061.5356770833332" y="339.0" />
-      <point x="639.3690104166667" y="339.0" />
-      <point x="91.33333333333326" y="84.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_todo_list" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event">
+      <point x="0.0" y="-64.0" />
+      <point x="2405.450846354167" y="380.0" />
+      <point x="2202.1748046875" y="380.0" />
+      <point x="38.4375" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_item" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_location">
-      <point x="-83.5" y="-119.0" />
-      <point x="0.0" y="84.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list_item_assignment" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user">
+      <point x="0.0" y="-64.0" />
+      <point x="1058.0" y="728.0" />
+      <point x="994.3795572916667" y="728.0" />
+      <point x="994.3795572916667" y="440.0" />
+      <point x="857.4873046875" y="440.0" />
+      <point x="10.25" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_invite" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_profile">
-      <point x="95.25" y="-73.0" />
-      <point x="2948.285677083333" y="747.0" />
-      <point x="3002.6755208333334" y="747.0" />
-      <point x="-29.25" y="61.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_suggestion" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event">
+      <point x="-51.25" y="-52.0" />
+      <point x="2589.200846354167" y="370.0" />
+      <point x="2227.7998046875" y="370.0" />
+      <point x="64.0625" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_event_role" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event">
-      <point x="-78.0" y="-61.5" />
-      <point x="1641.5356770833332" y="379.0" />
-      <point x="1626.6606770833332" y="379.0" />
-      <point x="66.875" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_event_rolling_vote" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rolling_vote">
+      <point x="0.0" y="-64.0" />
+      <point x="0.0" y="76.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_auth_provider" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user">
-      <point x="-53.5" y="-50.0" />
-      <point x="3476.8005208333334" y="389.0" />
-      <point x="2958.8395833333334" y="389.0" />
-      <point x="96.30000000000018" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_contact_invite" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user">
+      <point x="-56.25" y="-64.0" />
+      <point x="266.75" y="410.0" />
+      <point x="775.4873046875" y="410.0" />
+      <point x="-71.75" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_event_rolling_vote" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rolling_vote">
-      <point x="0.0" y="-61.5" />
-      <point x="2555.2755208333333" y="359.0" />
-      <point x="2461.535677083333" y="359.0" />
-      <point x="0.0" y="73.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_invite" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.invite">
+      <point x="30.625" y="-76.0" />
+      <point x="833.625" y="738.0" />
+      <point x="1587.3795572916667" y="738.0" />
+      <point x="0.0" y="64.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_contact_invite" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user">
-      <point x="58.5" y="-61.5" />
-      <point x="3412.8005208333334" y="399.0" />
-      <point x="2937.4395833333333" y="399.0" />
-      <point x="74.90000000000009" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_item_todo_list" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event">
+      <point x="-75.0" y="-64.0" />
+      <point x="3149.241861979167" y="748.0" />
+      <point x="2282.450846354167" y="748.0" />
+      <point x="2282.450846354167" y="440.0" />
+      <point x="2176.5498046875" y="440.0" />
+      <point x="12.8125" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list_item_assignment" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user">
-      <point x="0.0" y="-61.5" />
-      <point x="2589.035677083333" y="727.0" />
-      <point x="2687.5" y="727.0" />
-      <point x="2687.5" y="429.0" />
-      <point x="2851.8395833333334" y="429.0" />
-      <point x="-10.699999999999818" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_invite" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_profile">
+      <point x="-91.875" y="-76.0" />
+      <point x="711.125" y="758.0" />
+      <point x="684.5" y="758.0" />
+      <point x="28.125" y="64.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_event_rolling_vote" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event">
-      <point x="-78.0" y="-61.5" />
-      <point x="2477.2755208333333" y="369.0" />
-      <point x="1653.4106770833332" y="369.0" />
-      <point x="93.625" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_item" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_location">
+      <point x="81.25" y="-124.0" />
+      <point x="3362.325846354167" y="440.0" />
+      <point x="3477.28125" y="440.0" />
+      <point x="0.0" y="88.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list_item" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list">
-      <point x="0.0" y="-107.5" />
-      <point x="565.5" y="339.0" />
-      <point x="548.0356770833334" y="339.0" />
-      <point x="0.0" y="84.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_event_role" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event">
+      <point x="75.0" y="-64.0" />
+      <point x="1417.3795572916667" y="410.0" />
+      <point x="2074.0498046875" y="410.0" />
+      <point x="-89.6875" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_item_todo_list" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list">
-      <point x="0.0" y="-61.5" />
-      <point x="433.3539062499997" y="747.0" />
-      <point x="398.0" y="747.0" />
-      <point x="398.0" y="339.0" />
-      <point x="456.7023437500002" y="339.0" />
-      <point x="-91.33333333333326" y="84.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_auth_provider" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.auth_provider">
+      <point x="-51.25" y="-52.0" />
+      <point x="0.0" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_item_todo_list" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event">
-      <point x="78.0" y="-61.5" />
-      <point x="511.3539062499997" y="747.0" />
-      <point x="1581.0356770833332" y="747.0" />
-      <point x="1581.0356770833332" y="379.0" />
-      <point x="1573.1606770833332" y="379.0" />
-      <point x="13.375" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_auth_provider" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user">
+      <point x="51.25" y="-52.0" />
+      <point x="205.0" y="400.0" />
+      <point x="754.9873046875" y="400.0" />
+      <point x="-92.25" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_contact" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_profile">
-      <point x="-53.5" y="-50.0" />
-      <point x="3056.8005208333334" y="747.0" />
-      <point x="3061.1755208333334" y="747.0" />
-      <point x="29.25" y="61.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list_item_assignment" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list_item">
+      <point x="75.0" y="-64.0" />
+      <point x="1133.0" y="758.0" />
+      <point x="2946.075846354167" y="758.0" />
+      <point x="0.0" y="112.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_event_role" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.role">
-      <point x="0.0" y="-61.5" />
-      <point x="1719.5356770833332" y="379.0" />
-      <point x="1793.0356770833332" y="379.0" />
-      <point x="-58.5" y="61.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_role" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.role_category">
+      <point x="0.0" y="-64.0" />
+      <point x="0.0" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_role" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user">
-      <point x="53.5" y="-50.0" />
-      <point x="2110.7755208333333" y="409.0" />
-      <point x="2809.039583333333" y="409.0" />
-      <point x="-53.5" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_contact" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user">
+      <point x="-51.25" y="-52.0" />
+      <point x="506.75" y="420.0" />
+      <point x="795.9873046875" y="420.0" />
+      <point x="-51.25" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_profile" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event">
-      <point x="0.0" y="-96.0" />
-      <point x="1423.5356770833332" y="379.0" />
-      <point x="1546.4106770833332" y="379.0" />
-      <point x="-13.375" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_role" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user">
+      <point x="-51.25" y="-52.0" />
+      <point x="1056.1295572916667" y="430.0" />
+      <point x="877.9873046875" y="430.0" />
+      <point x="30.75" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_item" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event">
-      <point x="83.5" y="-119.0" />
-      <point x="304.0" y="349.0" />
-      <point x="1466.1606770833332" y="349.0" />
-      <point x="-93.625" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_profile" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event">
+      <point x="0.0" y="-100.0" />
+      <point x="2129.450846354167" y="440.0" />
+      <point x="2150.9248046875" y="440.0" />
+      <point x="-12.8125" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_contact" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user">
-      <point x="53.5" y="-50.0" />
-      <point x="3163.8005208333334" y="747.0" />
-      <point x="3160.535677083333" y="747.0" />
-      <point x="3160.535677083333" y="409.0" />
-      <point x="2916.039583333333" y="409.0" />
-      <point x="53.5" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_todo_list" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list">
+      <point x="75.0" y="-64.0" />
+      <point x="2480.450846354167" y="430.0" />
+      <point x="2972.6979166666665" y="430.0" />
+      <point x="-88.33333333333348" y="88.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_role" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.role">
-      <point x="-53.5" y="-50.0" />
-      <point x="2003.7755208333333" y="379.0" />
-      <point x="1910.0356770833332" y="379.0" />
-      <point x="58.5" y="61.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_event_role" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user">
+      <point x="-75.0" y="-64.0" />
+      <point x="1267.3795572916667" y="420.0" />
+      <point x="898.4873046875" y="420.0" />
+      <point x="51.25" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list_item_assignment" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_profile">
-      <point x="78.0" y="-61.5" />
-      <point x="2667.035677083333" y="737.0" />
-      <point x="2944.1755208333334" y="737.0" />
-      <point x="-87.75" y="61.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_profile" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user">
+      <point x="0.0" y="-64.0" />
+      <point x="656.375" y="430.0" />
+      <point x="816.4873046875" y="430.0" />
+      <point x="-30.75" y="52.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_item_todo_list" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_item">
-      <point x="-78.0" y="-61.5" />
-      <point x="355.3539062499997" y="747.0" />
-      <point x="220.5" y="747.0" />
-      <point x="0.0" y="119.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_suggestion" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.suggestion">
+      <point x="51.25" y="-52.0" />
+      <point x="2691.700846354167" y="420.0" />
+      <point x="2776.03125" y="420.0" />
+      <point x="0.0" y="88.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_contact_invite" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_user_profile">
-      <point x="-58.5" y="-61.5" />
-      <point x="3295.8005208333334" y="737.0" />
-      <point x="3119.6755208333334" y="737.0" />
-      <point x="87.75" y="61.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_item_todo_list" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_item">
+      <point x="0.0" y="-64.0" />
+      <point x="3224.241861979167" y="758.0" />
+      <point x="3281.075846354167" y="758.0" />
+      <point x="0.0" y="124.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_todo_list" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event">
-      <point x="0.0" y="-61.5" />
-      <point x="1139.5356770833332" y="369.0" />
-      <point x="1519.6606770833332" y="369.0" />
-      <point x="-40.125" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list_item_assignment" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_profile">
+      <point x="-75.0" y="-64.0" />
+      <point x="983.0" y="728.0" />
+      <point x="740.75" y="728.0" />
+      <point x="84.375" y="64.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event_invite" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.rvep_event">
-      <point x="-95.25" y="-73.0" />
-      <point x="2757.785677083333" y="717.0" />
-      <point x="1592.0356770833332" y="717.0" />
-      <point x="1592.0356770833332" y="379.0" />
-      <point x="1599.9106770833332" y="379.0" />
-      <point x="40.125" y="50.0" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_contact" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_profile">
+      <point x="51.25" y="-52.0" />
+      <point x="609.25" y="758.0" />
+      <point x="628.25" y="758.0" />
+      <point x="-28.125" y="64.0" />
     </edge>
-    <edge source="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list_item_assignment" target="96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.todo_list_item">
-      <point x="-78.0" y="-61.5" />
-      <point x="2511.035677083333" y="737.0" />
-      <point x="565.5" y="737.0" />
-      <point x="0.0" y="107.5" />
+    <edge source="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_event_item_todo_list" target="c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.todo_list">
+      <point x="75.0" y="-64.0" />
+      <point x="3299.241861979167" y="758.0" />
+      <point x="3569.03125" y="758.0" />
+      <point x="3569.03125" y="350.0" />
+      <point x="3149.3645833333335" y="350.0" />
+      <point x="88.33333333333348" y="88.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.37456211263810296" x="1845.4999999999998" y="505.5" />
+  <settings layout="Hierarchic Group" zoom="0.39889807162534435" x="1805.0" y="515.0" />
   <SelectedNodes>
-    <node>96d8acc4-8911-4bcf-81ff-0f3882e00b7f.TABLE:rvep.auth_provider</node>
+    <node>c3403396-451c-4244-95e0-9bac1e823fe0.TABLE:rvep.rvep_user_profile</node>
   </SelectedNodes>
   <Categories>
     <Category>Key columns</Category>
