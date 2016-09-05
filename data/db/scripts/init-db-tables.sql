@@ -14,13 +14,18 @@ insert into role_category (id, name, enabled) value (1000, 'app', 1);
 insert into role_category (id, name, enabled) value (1100, 'event', 1);
 
 -- app roles
-insert into rvep_role (name, role_category_id, enabled) values ('ROLE_USER', 1000, 1);
-insert into rvep_role (name, role_category_id, enabled) values ('ROLE_ANONYMOUS', 1000, 1);
-insert into rvep_role (name, role_category_id, enabled) values ('ROLE_ADMIN', 1000, 1);
+insert into role (name, enabled, role_category_id) values ('ROLE_USER', 1, 1000);
+insert into role (name, enabled, role_category_id) values ('ROLE_ANONYMOUS', 1, 1000);
+insert into role (name, enabled, role_category_id) values ('ROLE_ADMIN', 1, 1000);
 
 -- event roles
-insert into rvep_role (name, role_category_id, enabled) values ('ROLE_CREATOR', 1100, 1);
-insert into rvep_role (name, role_category_id, enabled) values ('ROLE_PLANNER', 1100, 1);
-insert into rvep_role (name, role_category_id, enabled) values ('ROLE_TASKER', 1100, 1);
-insert into rvep_role (name, role_category_id, enabled) values ('ROLE_ATTENDE', 1100, 1);
-insert into rvep_role (name, role_category_id, enabled) values ('ROLE_BYSTANDER', 1100, 1);
+insert into role (name, enabled, role_category_id) values ('ROLE_CREATOR', 1, 1100);
+insert into role (name, enabled, role_category_id) values ('ROLE_PLANNER', 1, 1100);
+insert into role (name, enabled, role_category_id) values ('ROLE_TASKER', 1, 1100);
+insert into role (name, enabled, role_category_id) values ('ROLE_ATTENDE', 1, 1100);
+insert into role (name, enabled, role_category_id) values ('ROLE_BYSTANDER', 1, 1100);
+
+-- auth providers
+insert into auth_provider (name, enabled) values ('google', 1);
+insert into auth_provider (name, enabled) values ('twitter', 1);
+insert into auth_provider (name, enabled) values ('facebook', 1);
