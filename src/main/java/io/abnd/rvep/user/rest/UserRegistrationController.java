@@ -11,7 +11,7 @@ public class UserRegistrationController {
 
     @ResponseBody
     @RequestMapping(value = "/register", method = RequestMethod.POST, headers = "Content-Type=application/json", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<RvepRegisterUserResponse> verify() {
+    public ResponseEntity<RvepRegisterUserResponse> register() {
         RvepRegisterUserResponse registerUserResponse =
                 new RvepRegisterUserResponse();
 
