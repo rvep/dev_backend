@@ -10,9 +10,8 @@ import io.abnd.rvep.user.model.RvepUser;
 import io.abnd.rvep.user.model.RvepUserProfile;
 import io.abnd.rvep.user.service.intf.RegisterUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 import java.util.Calendar;
 
 @Service
@@ -34,6 +33,7 @@ public class RvepRegisterUserService implements RegisterUserService {
     }
 
     @Override
+    @Transactional
     public boolean registerUser(String email, String provider) {
         Calendar cal = Calendar.getInstance();
 
@@ -54,7 +54,6 @@ public class RvepRegisterUserService implements RegisterUserService {
         userAuthProvider.setRvepUser(user);
         userAuthProvider.setAuthProvider(authProvider);
 
-        // commit
         try {
             rvepUserDAO.save(user);
             rvepUserProfileDAO.save(userProfile);
