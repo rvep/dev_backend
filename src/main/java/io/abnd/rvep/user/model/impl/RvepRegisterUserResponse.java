@@ -4,11 +4,11 @@ import io.abnd.rvep.user.model.intf.RegisterUserResponse;
 
 public class RvepRegisterUserResponse implements RegisterUserResponse {
 
-    private String username;
+    private boolean userRegistered;
 
     @Override
-    public void setUsername(String username) { this.username = username; }
+    public void setUserRegistered(boolean userRegistered) { this.userRegistered = userRegistered; }
     @Override
-    public String getUsername() { return this.username; }
+    public boolean getUserRegistered() { return this.userRegistered; }
 
 }

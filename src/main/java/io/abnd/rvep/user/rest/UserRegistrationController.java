@@ -23,9 +23,18 @@ public class UserRegistrationController {
                     consumes="application/json",
                     produces="application/json")
     public ResponseEntity<RvepRegisterUserResponse>
-    register(RvepRegisterUserRequest request) {
+    register(@RequestBody RvepRegisterUserRequest request) {
         RvepRegisterUserResponse registerUserResponse =
                 new RvepRegisterUserResponse();
+
+        if (!rvepRegisterUserService.isUserRegistered(request.getEmail())) {
+            registerUserResponse.setUserRegistered(
+                    rvepRegisterUserService
+                            .registerUser(request.getEmail(),
+                                    request.getProvider()));
+        } else {
+            registerUserResponse.setUserRegistered(false);
+        }
 
         ResponseEntity<RvepRegisterUserResponse> response =
                 new ResponseEntity<>(registerUserResponse, HttpStatus.OK);

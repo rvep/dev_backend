@@ -4,4 +4,6 @@ public interface RegisterUserService {
 
     boolean isUserRegistered(String email);
 
+    boolean registerUser(String email, String provider);
+
 }

@@ -14,5 +14,12 @@ public interface AuthProviderDAO extends JpaRepository<AuthProvider, Integer> {
 	 * @return
 	 */
 	AuthProvider findById(int id);
+
+	/**
+	 *
+	 * @param name
+	 * @return
+	 */
+	AuthProvider findByName(String name);
 	
 }
