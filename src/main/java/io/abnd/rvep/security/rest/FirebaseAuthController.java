@@ -20,7 +20,6 @@ public class FirebaseAuthController {
     private FirebaseAuthVerifier fbAuthVerifier;
 
     @ResponseBody
-    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/verify", method = RequestMethod.POST, headers = "Content-Type=application/json", consumes = "application/json", produces = "application/json")
     public ResponseEntity<AuthTokenVerification> verify(@RequestBody FirebaseAuthToken glAuthToken) throws GeneralSecurityException, IOException {
         // init return

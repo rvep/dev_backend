@@ -4,6 +4,7 @@ buildscript {
 	repositories {
 		mavenCentral()
 	}
+
 	dependencies {
 		// spring
 		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE'
@@ -77,10 +78,6 @@ bootRun {
 	//addResources = true
 	classpath = sourceSets.main.runtimeClasspath + configurations.dev
 }
-
-// run all task
-task runAll {}
-runAll.dependsOn(bootRun)
 
 task wrapper(type: Wrapper) {
 	gradleVersion = '3.0'

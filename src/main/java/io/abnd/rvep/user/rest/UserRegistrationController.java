@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 public class UserRegistrationController {
 
     @ResponseBody
-    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/register", method = RequestMethod.POST, headers = "Content-Type=application/json", consumes = "application/json", produces = "application/json")
     public ResponseEntity<RvepRegisterUserResponse> verify() {
         RvepRegisterUserResponse registerUserResponse =

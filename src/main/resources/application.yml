@@ -14,6 +14,14 @@ logging:
 spring.devtools.remote.secret: mysecret
 
 # ------------------------------
+# - cors
+# ------------------------------
+
+cors:
+  host: http://localhost
+  port: 3000
+
+# ------------------------------
 # - datasource / jpa / hibernate
 # ------------------------------
 
