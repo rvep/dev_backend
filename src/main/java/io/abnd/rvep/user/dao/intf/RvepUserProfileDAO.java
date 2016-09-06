@@ -14,5 +14,7 @@ public interface RvepUserProfileDAO extends JpaRepository<RvepUserProfile, Integ
 	 * @return
 	 */
 	RvepUserProfile findById(int id);
+
+	RvepUserProfile findByEmail(String email);
 	
 }
