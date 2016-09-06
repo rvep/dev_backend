@@ -26,6 +26,6 @@ insert into rvep_role (name, enabled, role_category_id) values ('ROLE_ATTENDE', 
 insert into rvep_role (name, enabled, role_category_id) values ('ROLE_BYSTANDER', 1, 1100);
 
 -- auth providers
-insert into auth_provider (name, enabled) values ('google', 1);
-insert into auth_provider (name, enabled) values ('twitter', 1);
-insert into auth_provider (name, enabled) values ('facebook', 1);
+insert into auth_provider (name, enabled) values ('google.com', 1);
+insert into auth_provider (name, enabled) values ('twitter.com', 1);
+insert into auth_provider (name, enabled) values ('facebook.com', 1);
