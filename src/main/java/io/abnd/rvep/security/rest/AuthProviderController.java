@@ -19,9 +19,11 @@ public class AuthProviderController {
     private AuthProviderService authProviderService;
 
     @ResponseBody
-    @RequestMapping(path = "/get/providers", produces = "application/json")
+    @RequestMapping(path="/get/providers",
+                    produces = "application/json")
     public ResponseEntity<List<AuthProvider>> getAuthProviders() {
-        return new ResponseEntity(authProviderService.getAuthProviders(), HttpStatus.OK);
+        return new ResponseEntity(authProviderService
+                .getAuthProviders(), HttpStatus.OK);
     }
 
 }

@@ -20,8 +20,14 @@ public class FirebaseAuthController {
     private FirebaseAuthVerifier fbAuthVerifier;
 
     @ResponseBody
-    @RequestMapping(value = "/verify", method = RequestMethod.POST, headers = "Content-Type=application/json", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<AuthTokenVerification> verify(@RequestBody FirebaseAuthToken glAuthToken) throws GeneralSecurityException, IOException {
+    @RequestMapping(value="/verify",
+                    method=RequestMethod.POST,
+                    headers="Content-Type=application/json",
+                    consumes="application/json",
+                    produces="application/json")
+    public ResponseEntity<AuthTokenVerification>
+    verify(@RequestBody FirebaseAuthToken glAuthToken)
+            throws GeneralSecurityException, IOException {
         // init return
         AuthTokenVerification fbAuthTokenVerification =
                 new FirebaseAuthTokenVerification();
