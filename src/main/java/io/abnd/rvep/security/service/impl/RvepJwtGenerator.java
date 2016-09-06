@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class RVEPJwtGenerator implements JwtGenerator {
+public class RvepJwtGenerator implements JwtGenerator {
 
     @Override
     public String generateIdToken(String username) {

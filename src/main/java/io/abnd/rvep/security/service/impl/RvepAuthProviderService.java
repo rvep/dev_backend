@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class RVEPAuthProviderService implements AuthProviderService {
+public class RvepAuthProviderService implements AuthProviderService {
     @Autowired
     private AuthProviderDAO authProviderDAO;
 
