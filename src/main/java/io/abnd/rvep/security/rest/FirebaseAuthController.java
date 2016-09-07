@@ -41,7 +41,7 @@ public class FirebaseAuthController {
 
         // if verified get rvep api idToken
         if (isVerified) {
-            String idToken = jwtGenerator.generateIdToken(authToken.getEmail(), authToken.getProvider());
+            String idToken = jwtGenerator.generateIdToken(authToken.getEmail(), authToken.getProvider(), authToken.getIdToken());
             fbAuthTokenVerification.setIdToken(idToken);
         }
 
