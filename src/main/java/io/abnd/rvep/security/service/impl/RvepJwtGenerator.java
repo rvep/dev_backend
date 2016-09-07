@@ -1,22 +1,37 @@
 package io.abnd.rvep.security.service.impl;
 
+import io.abnd.rvep.security.dao.intf.RvepUserRoleDAO;
+import io.abnd.rvep.security.model.RvepRole;
+import io.abnd.rvep.security.model.RvepUserRole;
 import io.abnd.rvep.security.service.intf.JwtGenerator;
+import io.abnd.rvep.user.dao.intf.RvepUserDAO;
+import io.abnd.rvep.user.model.RvepUser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
 @Service
 public class RvepJwtGenerator implements JwtGenerator {
+    @Autowired
+    private RvepUserRoleDAO rvepUserRoleDAO;
+    @Autowired
+    private RvepUserDAO rvepUserDAO;
 
     @Override
-    public String generateIdToken(String username) {
-        // get user roles
-        String roles = "";
+    public String generateIdToken(String email, String provider) {
+        // get user
+        RvepUser user = rvepUserDAO.findByEmail(email);
+        // get user role
+        RvepUserRole userRole = rvepUserRoleDAO.findByRvepUserId(user.getId());
+        // get role
+        RvepRole role = userRole.getRvepRole();
 
-        return Jwts.builder().setSubject(username)
-                .claim("roles", roles)
+        return Jwts.builder().setSubject(email)
+                .claim("provider", provider)
+                .claim("role", role.getName())
                 .setIssuedAt(new Date())
                 .signWith(SignatureAlgorithm.HS256, "secretkey")
                 .compact();
