@@ -37,6 +37,7 @@ public class RvepJwtGenerator implements JwtGenerator {
         return Jwts.builder().setSubject(email)
                 .claim("provider", provider)
                 .claim("role", role.getName())
+                .claim("user_id", user.getId())
                 .setIssuedAt(new Date())
                 .signWith(SignatureAlgorithm.HS256, "secretkey")
                 .compact();
