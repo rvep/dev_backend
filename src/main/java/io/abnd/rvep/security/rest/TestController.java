@@ -2,7 +2,6 @@ package io.abnd.rvep.security.rest;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +16,12 @@ import io.abnd.rvep.security.service.intf.ServiceTest;
 @RestController
 @RequestMapping("/api/test")
 public class TestController {
-	
-	@Autowired
+
 	private ServiceTest serviceTest;
+
+	public TestController(ServiceTest serviceTest) {
+		this.serviceTest = serviceTest;
+	}
 	
 	@RequestMapping(value="/get/roles", method=RequestMethod.GET, produces="application/json")
 	public String testGetRoles() {

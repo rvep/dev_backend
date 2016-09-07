@@ -8,17 +8,21 @@ import io.abnd.rvep.user.dao.intf.RvepUserProfileDAO;
 import io.abnd.rvep.user.model.RvepUser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
 @Service
 public class RvepJwtGenerator implements JwtGenerator {
-    @Autowired
+
     private RvepUserRoleDAO rvepUserRoleDAO;
-    @Autowired
     private RvepUserProfileDAO rvepUserProfileDAO;
+
+    public RvepJwtGenerator(RvepUserRoleDAO rvepUserRoleDAO,
+                            RvepUserProfileDAO rvepUserProfileDAO) {
+        this.rvepUserProfileDAO = rvepUserProfileDAO;
+        this.rvepUserRoleDAO = rvepUserRoleDAO;
+    }
 
     @Override
     public String generateIdToken(String email, String provider, String firebaseIdToken) {

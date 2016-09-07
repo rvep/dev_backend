@@ -5,7 +5,6 @@ import io.abnd.rvep.security.model.impl.FirebaseAuthVerificationResponse;
 import io.abnd.rvep.security.model.intf.AuthVerificationResponse;
 import io.abnd.rvep.security.service.impl.FirebaseAuthVerifier;
 import io.abnd.rvep.security.service.impl.RvepJwtGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,10 +16,14 @@ import java.security.GeneralSecurityException;
 @RequestMapping("/api/auth/firebase")
 public class FirebaseAuthController {
 
-    @Autowired
     private FirebaseAuthVerifier fbAuthVerifier;
-    @Autowired
     private RvepJwtGenerator jwtGenerator;
+
+    public FirebaseAuthController(FirebaseAuthVerifier fbAuthVerifier,
+                                  RvepJwtGenerator jwtGenerator) {
+        this.fbAuthVerifier = fbAuthVerifier;
+        this.jwtGenerator = jwtGenerator;
+    }
 
     @ResponseBody
     @RequestMapping(value="/verify",

@@ -1,7 +1,6 @@
 package io.abnd.rvep.config.web;
 
 import io.abnd.rvep.config.properties.CorsProperties;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +11,11 @@ import org.springframework.web.filter.CorsFilter;
 @Configuration
 public class CorsFilterRegistration {
 
-    @Autowired
     private CorsProperties corsProperties;
+
+    public CorsFilterRegistration(CorsProperties corsProperties) {
+        this.corsProperties = corsProperties;
+    }
 
     @Bean
     public FilterRegistrationBean corsFilter() {

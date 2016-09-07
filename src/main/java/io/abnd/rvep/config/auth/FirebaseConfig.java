@@ -1,6 +1,5 @@
 package io.abnd.rvep.config.auth;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -12,8 +11,12 @@ import io.abnd.rvep.config.properties.FirebaseProperties;
 
 @Component
 public class FirebaseConfig {
-    @Autowired
+
     private FirebaseProperties fbProps;
+
+    public FirebaseConfig(FirebaseProperties fbProps) {
+        this.fbProps = fbProps;
+    }
 
     @PostConstruct
     public void init() throws FileNotFoundException {

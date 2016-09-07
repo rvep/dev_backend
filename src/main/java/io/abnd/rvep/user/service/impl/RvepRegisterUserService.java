@@ -13,7 +13,6 @@ import io.abnd.rvep.user.dao.intf.RvepUserProfileDAO;
 import io.abnd.rvep.user.model.RvepUser;
 import io.abnd.rvep.user.model.RvepUserProfile;
 import io.abnd.rvep.user.service.intf.RegisterUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.Calendar;
@@ -21,18 +20,26 @@ import java.util.Calendar;
 @Service
 public class RvepRegisterUserService implements RegisterUserService {
 
-    @Autowired
     private RvepUserProfileDAO rvepUserProfileDAO;
-    @Autowired
     private AuthProviderDAO authProviderDAO;
-    @Autowired
     private RvepUserDAO rvepUserDAO;
-    @Autowired
     private RvepUserAuthProviderDAO rvepUserAuthProviderDAO;
-    @Autowired
     private RvepRoleDAO rvepRoleDAO;
-    @Autowired
     private RvepUserRoleDAO rvepUserRoleDAO;
+
+    public RvepRegisterUserService(RvepUserProfileDAO rvepUserProfileDAO,
+                                   AuthProviderDAO authProviderDAO,
+                                   RvepUserDAO rvepUserDAO,
+                                   RvepUserAuthProviderDAO rvepUserAuthProviderDAO,
+                                   RvepRoleDAO rvepRoleDAO,
+                                   RvepUserRoleDAO rvepUserRoleDAO) {
+        this.rvepUserProfileDAO = rvepUserProfileDAO;
+        this.authProviderDAO = authProviderDAO;
+        this.rvepUserDAO = rvepUserDAO;
+        this.rvepUserAuthProviderDAO = rvepUserAuthProviderDAO;
+        this.rvepRoleDAO = rvepRoleDAO;
+        this.rvepUserRoleDAO = rvepUserRoleDAO;
+    }
 
     @Override
     public boolean isUserRegistered(String email) {

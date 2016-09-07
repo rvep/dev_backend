@@ -31,14 +31,15 @@ public class TestControllerTest {
 
 	@Autowired
 	private ServiceTest serviceTest;
-
 	@Autowired
 	private WebApplicationContext webAppContext;
 
 	private MockMvc mockMvc;
 
-	private List<RvepRole> roleList = new ArrayList<RvepRole>();
-	private List<RoleCategory> roleCategoryList = new ArrayList<RoleCategory>();
+	private List<RvepRole> roleList = new ArrayList<>();
+	private List<RoleCategory> roleCategoryList = new ArrayList<>();
+
+	public TestControllerTest() {}
 
 	@Before
 	public void setup() throws Exception {

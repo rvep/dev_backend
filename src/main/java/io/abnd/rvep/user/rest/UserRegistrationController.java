@@ -5,7 +5,6 @@ import io.abnd.rvep.security.service.impl.RvepJwtGenerator;
 import io.abnd.rvep.user.model.impl.RvepUserRegistrationRequest;
 import io.abnd.rvep.user.model.impl.RvepUserRegistrationResponse;
 import io.abnd.rvep.user.service.impl.RvepRegisterUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,12 +16,17 @@ import java.security.GeneralSecurityException;
 @RequestMapping("/api/registration")
 public class UserRegistrationController {
 
-    @Autowired
     private RvepRegisterUserService rvepRegisterUserService;
-    @Autowired
     private FirebaseAuthVerifier fbAuthVerifier;
-    @Autowired
     private RvepJwtGenerator jwtGenerator;
+
+    public UserRegistrationController(RvepRegisterUserService rvepRegisterUserService,
+                                      FirebaseAuthVerifier fbAuthVerifier,
+                                      RvepJwtGenerator jwtGenerator) {
+        this.rvepRegisterUserService = rvepRegisterUserService;
+        this.fbAuthVerifier = fbAuthVerifier;
+        this.jwtGenerator = jwtGenerator;
+    }
 
     @ResponseBody
     @RequestMapping(value="/register/user",
