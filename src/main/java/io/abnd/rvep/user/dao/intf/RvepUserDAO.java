@@ -14,12 +14,5 @@ public interface RvepUserDAO extends JpaRepository<RvepUser, Integer> {
 	 * @return
 	 */
 	RvepUser findById(int id);
-
-	/**
-	 * 
-	 * @param email
-	 * @return
-	 */
-	RvepUser findByEmail(String email);
 	
 }
