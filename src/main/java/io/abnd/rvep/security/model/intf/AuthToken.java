@@ -3,6 +3,10 @@ package io.abnd.rvep.security.model.intf;
 public interface AuthToken {
 
     String getIdToken();
-    void setIdToken(String idToken);
+    String getEmail();
+    String getProvider();
 
+    void setIdToken(String idToken);
+    void setEmail(String email);
+    void setProvider(String provider);
 }

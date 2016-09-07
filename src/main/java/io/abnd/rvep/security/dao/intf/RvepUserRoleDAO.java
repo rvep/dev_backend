@@ -14,5 +14,12 @@ public interface RvepUserRoleDAO extends JpaRepository<RvepUserRole, Integer> {
 	 * @return
 	 */
 	RvepUserRole findById(int id);
+
+	/**
+	 *
+	 * @param id
+	 * @return
+	 */
+	RvepUserRole findByRvepUserId(int id);
 	
 }
