@@ -2,6 +2,8 @@ package io.abnd.rvep.security.filter;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.filter.GenericFilterBean;
 
 import javax.servlet.FilterChain;
@@ -13,6 +15,8 @@ import java.io.IOException;
 
 public class JwtFilter extends GenericFilterBean {
 
+    private static final Logger logger = LoggerFactory.getLogger(JwtFilter.class);
+
     @Override
     public void doFilter(ServletRequest request,
                          ServletResponse response,
@@ -21,11 +25,13 @@ public class JwtFilter extends GenericFilterBean {
         HttpServletRequest req = (HttpServletRequest)request;
 
         // get idToken
-        String idToken = "";
+        String idToken = req.getHeader("idtoken");
 
         // validate jwt
         try {
-            Jwts.parser().setSigningKey("secret")
+            logger.info("attempting rvep jwt validation with idToken: ");
+            logger.info(idToken);
+            Jwts.parser().setSigningKey("secretkey")
                     .parseClaimsJws(idToken);
         } catch (SignatureException e) {
             // claims may have been tampered with throw error
