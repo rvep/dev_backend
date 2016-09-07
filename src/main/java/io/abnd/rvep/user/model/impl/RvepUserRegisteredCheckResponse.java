@@ -1,8 +1,8 @@
 package io.abnd.rvep.user.model.impl;
 
-import io.abnd.rvep.user.model.intf.IsUserRegisteredResponse;
+import io.abnd.rvep.user.model.intf.UserRegisteredCheckResponse;
 
-public class RvepIsUserRegisteredResponse implements IsUserRegisteredResponse {
+public class RvepUserRegisteredCheckResponse implements UserRegisteredCheckResponse {
     private boolean isRegistered;
 
     @Override

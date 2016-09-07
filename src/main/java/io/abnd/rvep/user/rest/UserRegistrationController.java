@@ -1,6 +1,6 @@
 package io.abnd.rvep.user.rest;
 
-import io.abnd.rvep.user.model.impl.RvepIsUserRegisteredResponse;
+import io.abnd.rvep.user.model.impl.RvepUserRegisteredCheckResponse;
 import io.abnd.rvep.user.model.impl.RvepRegisterUserRequest;
 import io.abnd.rvep.user.model.impl.RvepRegisterUserResponse;
 import io.abnd.rvep.user.service.impl.RvepRegisterUserService;
@@ -47,17 +47,17 @@ public class UserRegistrationController {
                     method=RequestMethod.GET,
                     headers="Content-Type=application/json",
                     produces="application/json")
-    public ResponseEntity<RvepIsUserRegisteredResponse>
+    public ResponseEntity<RvepUserRegisteredCheckResponse>
     isUserRegistered(@RequestParam("email") String email) {
-        RvepIsUserRegisteredResponse rvepIsUserRegisteredResponse =
-                new RvepIsUserRegisteredResponse();
+        RvepUserRegisteredCheckResponse rvepIsUserRegisteredResponse =
+                new RvepUserRegisteredCheckResponse();
 
         rvepIsUserRegisteredResponse
                 .setIsRegistered(
                         this.rvepRegisterUserService
                             .isUserRegistered(email));
 
-        ResponseEntity<RvepIsUserRegisteredResponse> response =
+        ResponseEntity<RvepUserRegisteredCheckResponse> response =
                 new ResponseEntity<>(rvepIsUserRegisteredResponse,
                                      HttpStatus.OK);
 
