@@ -1,6 +1,6 @@
 package io.abnd.rvep.security.model.intf;
 
-public interface AuthToken {
+public interface AuthVerificationRequest {
 
     String getIdToken();
     String getEmail();

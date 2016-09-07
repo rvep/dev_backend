@@ -10,14 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/registration")
+@RequestMapping("/api/app/user/")
 public class UserRegistrationController {
 
     @Autowired
     private RvepRegisterUserService rvepRegisterUserService;
 
     @ResponseBody
-    @RequestMapping(value="/register/user",
+    @RequestMapping(value="/register",
                     method=RequestMethod.POST,
                     headers="Content-Type=application/json",
                     consumes="application/json",
@@ -43,7 +43,7 @@ public class UserRegistrationController {
     }
 
     @ResponseBody
-    @RequestMapping(value="/is/user/registered",
+    @RequestMapping(value="/is/registered",
                     method=RequestMethod.GET,
                     headers="Content-Type=application/json",
                     produces="application/json")

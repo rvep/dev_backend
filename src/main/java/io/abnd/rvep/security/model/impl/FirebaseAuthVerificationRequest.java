@@ -1,17 +1,15 @@
 package io.abnd.rvep.security.model.impl;
 
-import io.abnd.rvep.security.model.intf.AuthToken;
+import io.abnd.rvep.security.model.intf.AuthVerificationRequest;
 
-public class FirebaseAuthToken implements AuthToken {
+public class FirebaseAuthVerificationRequest implements AuthVerificationRequest {
 
     private String idToken;
     private String email;
     private String provider;
 
     @Override
-    public String getIdToken() {
-        return this.idToken;
-    }
+    public String getIdToken() { return this.idToken; }
     @Override
     public String getEmail() { return this.email; }
     @Override

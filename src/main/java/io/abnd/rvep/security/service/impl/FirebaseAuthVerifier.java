@@ -7,7 +7,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import io.abnd.rvep.security.model.intf.AuthToken;
+import io.abnd.rvep.security.model.intf.AuthVerificationRequest;
 import io.abnd.rvep.security.service.intf.AuthVerifier;
 import io.jsonwebtoken.Jwts;
 import org.slf4j.Logger;
@@ -38,7 +38,7 @@ public class FirebaseAuthVerifier implements AuthVerifier {
      * @throws GeneralSecurityException
      * @throws IOException
      */
-    public boolean verify(AuthToken token) throws GeneralSecurityException, IOException {
+    public boolean verify(AuthVerificationRequest token) throws GeneralSecurityException, IOException {
         // get public keys
         JsonObject publicKeys = getPublicKeysJson();
 

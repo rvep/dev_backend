@@ -1,8 +1,8 @@
 package io.abnd.rvep.security.rest;
 
-import io.abnd.rvep.security.model.impl.FirebaseAuthToken;
-import io.abnd.rvep.security.model.impl.FirebaseAuthTokenVerification;
-import io.abnd.rvep.security.model.intf.AuthTokenVerification;
+import io.abnd.rvep.security.model.impl.FirebaseAuthVerificationRequest;
+import io.abnd.rvep.security.model.impl.FirebaseAuthVerificationResponse;
+import io.abnd.rvep.security.model.intf.AuthVerificationResponse;
 import io.abnd.rvep.security.service.impl.FirebaseAuthVerifier;
 import io.abnd.rvep.security.service.impl.RvepJwtGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,26 +28,26 @@ public class FirebaseAuthController {
                     headers="Content-Type=application/json",
                     consumes="application/json",
                     produces="application/json")
-    public ResponseEntity<AuthTokenVerification>
-    verify(@RequestBody FirebaseAuthToken authToken)
+    public ResponseEntity<AuthVerificationResponse>
+    verify(@RequestBody FirebaseAuthVerificationRequest authToken)
             throws GeneralSecurityException, IOException {
         // init return
-        AuthTokenVerification fbAuthTokenVerification =
-                new FirebaseAuthTokenVerification();
+        AuthVerificationResponse fbAuthVerificationResponse =
+                new FirebaseAuthVerificationResponse();
 
         // verify token
         boolean isVerified = this.fbAuthVerifier.verify(authToken);
-        fbAuthTokenVerification.setIsVerified(isVerified);
+        fbAuthVerificationResponse.setIsVerified(isVerified);
 
         // if verified get rvep api idToken
         if (isVerified) {
             String idToken = jwtGenerator.generateIdToken(authToken.getEmail(), authToken.getProvider(), authToken.getIdToken());
-            fbAuthTokenVerification.setIdToken(idToken);
+            fbAuthVerificationResponse.setIdToken(idToken);
         }
 
         // return json response
-        ResponseEntity<AuthTokenVerification> response =
-                new ResponseEntity<>(fbAuthTokenVerification, HttpStatus.OK);
+        ResponseEntity<AuthVerificationResponse> response =
+                new ResponseEntity<>(fbAuthVerificationResponse, HttpStatus.OK);
         return response;
     }
 

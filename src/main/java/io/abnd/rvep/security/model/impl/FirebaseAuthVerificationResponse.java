@@ -1,8 +1,8 @@
 package io.abnd.rvep.security.model.impl;
 
-import io.abnd.rvep.security.model.intf.AuthTokenVerification;
+import io.abnd.rvep.security.model.intf.AuthVerificationResponse;
 
-public class FirebaseAuthTokenVerification implements AuthTokenVerification {
+public class FirebaseAuthVerificationResponse implements AuthVerificationResponse {
     private boolean isVerified;
     private String idToken;
 

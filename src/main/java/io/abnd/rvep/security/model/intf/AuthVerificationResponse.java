@@ -1,6 +1,6 @@
 package io.abnd.rvep.security.model.intf;
 
-public interface AuthTokenVerification {
+public interface AuthVerificationResponse {
 
     boolean getIsVerified();
     String getIdToken();
