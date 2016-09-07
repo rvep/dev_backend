@@ -36,18 +36,13 @@ public class FirebaseAuthController {
                 new FirebaseAuthVerificationResponse();
 
         // verify token
-        boolean isVerified = this.fbAuthVerifier.verify(authToken);
+        boolean isVerified = this.fbAuthVerifier.verify(authToken.getIdToken());
         fbAuthVerificationResponse.setIsVerified(isVerified);
-
-        // if verified get rvep api idToken
-        if (isVerified) {
-            String idToken = jwtGenerator.generateIdToken(authToken.getEmail(), authToken.getProvider(), authToken.getIdToken());
-            fbAuthVerificationResponse.setIdToken(idToken);
-        }
 
         // return json response
         ResponseEntity<AuthVerificationResponse> response =
                 new ResponseEntity<>(fbAuthVerificationResponse, HttpStatus.OK);
+
         return response;
     }
 

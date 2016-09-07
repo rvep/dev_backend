@@ -33,12 +33,12 @@ public class FirebaseAuthVerifier implements AuthVerifier {
 
     /**
      *
-     * @param token
+     * @param idToken
      * @return
      * @throws GeneralSecurityException
      * @throws IOException
      */
-    public boolean verify(AuthVerificationRequest token) throws GeneralSecurityException, IOException {
+    public boolean verify(String idToken) throws GeneralSecurityException, IOException {
         // get public keys
         JsonObject publicKeys = getPublicKeysJson();
 
@@ -51,17 +51,14 @@ public class FirebaseAuthVerifier implements AuthVerifier {
         for (Map.Entry<String, JsonElement> entry: publicKeys.entrySet()) {
             // log
             logger.info("attempting jwt id token verification with: ");
-
+            // attempt to verify
             try {
                 // trying next key
                 count++;
-
                 // get public key
                 PublicKey publicKey = getPublicKey(entry);
-
                 // validate claim set
-                Jwts.parser().setSigningKey(publicKey).parse(token.getIdToken());
-
+                Jwts.parser().setSigningKey(publicKey).parse(idToken);
                 // success, we can return
                 return true;
             } catch(Exception e) {

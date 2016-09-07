@@ -7,6 +7,6 @@ import java.security.GeneralSecurityException;
 
 public interface AuthVerifier {
 
-    boolean verify(AuthVerificationRequest token) throws GeneralSecurityException, IOException;
+    boolean verify(String idToken) throws GeneralSecurityException, IOException;
 
 }

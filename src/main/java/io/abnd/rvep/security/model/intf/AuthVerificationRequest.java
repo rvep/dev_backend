@@ -9,4 +9,5 @@ public interface AuthVerificationRequest {
     void setIdToken(String idToken);
     void setEmail(String email);
     void setProvider(String provider);
+
 }
