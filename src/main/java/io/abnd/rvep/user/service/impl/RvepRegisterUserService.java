@@ -1,9 +1,13 @@
 package io.abnd.rvep.user.service.impl;
 
 import io.abnd.rvep.security.dao.intf.AuthProviderDAO;
+import io.abnd.rvep.security.dao.intf.RvepRoleDAO;
 import io.abnd.rvep.security.dao.intf.RvepUserAuthProviderDAO;
+import io.abnd.rvep.security.dao.intf.RvepUserRoleDAO;
 import io.abnd.rvep.security.model.AuthProvider;
+import io.abnd.rvep.security.model.RvepRole;
 import io.abnd.rvep.security.model.RvepUserAuthProvider;
+import io.abnd.rvep.security.model.RvepUserRole;
 import io.abnd.rvep.user.dao.intf.RvepUserDAO;
 import io.abnd.rvep.user.dao.intf.RvepUserProfileDAO;
 import io.abnd.rvep.user.model.RvepUser;
@@ -25,6 +29,10 @@ public class RvepRegisterUserService implements RegisterUserService {
     private RvepUserDAO rvepUserDAO;
     @Autowired
     private RvepUserAuthProviderDAO rvepUserAuthProviderDAO;
+    @Autowired
+    private RvepRoleDAO rvepRoleDAO;
+    @Autowired
+    private RvepUserRoleDAO rvepUserRoleDAO;
 
     @Override
     public boolean isUserRegistered(String email) {
@@ -54,10 +62,17 @@ public class RvepRegisterUserService implements RegisterUserService {
         userAuthProvider.setRvepUser(user);
         userAuthProvider.setAuthProvider(authProvider);
 
+        // create user role
+        RvepRole role = rvepRoleDAO.findByName("ROLE_USER");
+        RvepUserRole userRole = new RvepUserRole();
+        userRole.setRvepUser(user);
+        userRole.setRvepRole(role);
+
         try {
             rvepUserDAO.save(user);
             rvepUserProfileDAO.save(userProfile);
             rvepUserAuthProviderDAO.save(userAuthProvider);
+            rvepUserRoleDAO.save(userRole);
         } catch (Exception e) {
             return false;
         }
