@@ -25,7 +25,7 @@ public class RvepJwtGenerator implements JwtGenerator {
     }
 
     @Override
-    public String generateIdToken(String email, String provider, String firebaseIdToken) {
+    public String generateIdToken(String email, String provider) {
         // get user
         RvepUser user = rvepUserProfileDAO.findByEmail(email).getRvepUser();
         // get user role
@@ -36,7 +36,6 @@ public class RvepJwtGenerator implements JwtGenerator {
         // return idToken
         return Jwts.builder().setSubject(email)
                 .claim("provider", provider)
-                .claim("firebaseIdToken", firebaseIdToken)
                 .claim("role", role.getName())
                 .setIssuedAt(new Date())
                 .signWith(SignatureAlgorithm.HS256, "secretkey")

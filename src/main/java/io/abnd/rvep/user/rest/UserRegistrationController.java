@@ -37,33 +37,29 @@ public class UserRegistrationController {
     public ResponseEntity<RvepUserRegistrationResponse>
     register(@RequestBody RvepUserRegistrationRequest request)
             throws GeneralSecurityException, IOException {
+        // init response
         RvepUserRegistrationResponse registerUserResponse =
                 new RvepUserRegistrationResponse();
 
-        // verify firebase idtoken
-        boolean fbAuthVerified = fbAuthVerifier.verify(request.getIdToken());
+        // check if user is not registered
+        if (!rvepRegisterUserService.isUserRegistered(request.getEmail())) {
+            // register user
+            registerUserResponse.setIsRegistered(
+                    rvepRegisterUserService
+                            .registerUser(request.getEmail(),
+                                    request.getProvider()));
 
-        // if verified
-        if (fbAuthVerified) {
-            // check if user is not registered
-            if (!rvepRegisterUserService.isUserRegistered(request.getEmail())) {
-                // register user
-                registerUserResponse.setIsRegistered(
-                        rvepRegisterUserService
-                                .registerUser(request.getEmail(),
-                                        request.getProvider()));
+            // get firebase idToken from header
 
-                // generate rvep api idtoken
-                String idToken = jwtGenerator.generateIdToken(
-                        request.getEmail(),
-                        request.getProvider(),
-                        request.getIdToken());
-                registerUserResponse.setIdToken(idToken);
+            // generate rvep api idtoken
+            String idToken = jwtGenerator.generateIdToken(
+                    request.getEmail(),
+                    request.getProvider());
+            registerUserResponse.setIdToken(idToken);
 
-            } else {
-                // user already registered
-                registerUserResponse.setIsRegistered(false);
-            }
+        } else {
+            // user already registered
+            registerUserResponse.setIsRegistered(false);
         }
 
         ResponseEntity<RvepUserRegistrationResponse> response =
@@ -80,25 +76,19 @@ public class UserRegistrationController {
     public ResponseEntity<RvepUserRegistrationResponse>
     isUserRegistered(@RequestBody RvepUserRegistrationRequest request)
             throws GeneralSecurityException, IOException {
+        // init response
         RvepUserRegistrationResponse registerUserResponse =
                 new RvepUserRegistrationResponse();
 
-        // verify firebase idtoken
-        boolean fbAuthVerified = fbAuthVerifier.verify(request.getIdToken());
+        boolean isRegistered = this.rvepRegisterUserService.isUserRegistered(request.getEmail());
+        registerUserResponse.setIsRegistered(isRegistered);
 
-        // if verified
-        if (fbAuthVerified) {
-            boolean isRegistered = this.rvepRegisterUserService.isUserRegistered(request.getEmail());
-            registerUserResponse.setIsRegistered(isRegistered);
-
-            // generate rvep api idtoken
-            if (isRegistered) {
-                String idToken = jwtGenerator.generateIdToken(
-                        request.getEmail(),
-                        request.getProvider(),
-                        request.getIdToken());
-                registerUserResponse.setIdToken(idToken);
-            }
+        // generate rvep api idtoken
+        if (isRegistered) {
+            String idToken = jwtGenerator.generateIdToken(
+                    request.getEmail(),
+                    request.getProvider());
+            registerUserResponse.setIdToken(idToken);
         }
 
         ResponseEntity<RvepUserRegistrationResponse> response =
