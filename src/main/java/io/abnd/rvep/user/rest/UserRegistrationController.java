@@ -44,7 +44,7 @@ public class UserRegistrationController {
                     rvepRegisterUserService
                             .registerUser(request.getEmail(),
                                     request.getProvider()));
-            
+
             // generate rvep api idtoken
             String idToken = jwtGenerator.generateIdToken(
                     request.getEmail(),
@@ -85,10 +85,7 @@ public class UserRegistrationController {
             registerUserResponse.setIdToken(idToken);
         }
 
-        ResponseEntity<RvepUserRegistrationResponse> response =
-                new ResponseEntity<>(registerUserResponse, HttpStatus.OK);
-
-        return response;
+        return new ResponseEntity<>(registerUserResponse, HttpStatus.OK);
     }
 
 }

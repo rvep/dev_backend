@@ -68,13 +68,13 @@ public class FirebaseAuthVerifier implements AuthVerifier {
                 // claims may have been tampered with
                 // if this is the last key, return false
                 if (count == size) {
-                    return false;
+                    throw new SecurityException();
                 }
             }
         }
 
-        // no jwt exceptions
-        return true;
+        // no jwt validation
+        return false;
     }
 
     /**

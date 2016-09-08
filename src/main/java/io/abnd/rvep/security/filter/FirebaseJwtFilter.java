@@ -11,7 +11,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.security.GeneralSecurityException;
 
 public class FirebaseJwtFilter extends GenericFilterBean {
 
@@ -35,9 +34,9 @@ public class FirebaseJwtFilter extends GenericFilterBean {
 
         try {
             this.firebaseAuthVerifier.verify(idToken);
-        } catch (GeneralSecurityException gse) {
-            logger.error(gse.getMessage());
-            throw new ServletException(gse);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            throw new ServletException(e);
         }
 
         // all good, continue with chain
