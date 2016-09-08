@@ -5,10 +5,7 @@ import io.abnd.rvep.event.model.impl.RvepAddEventResponse;
 import io.abnd.rvep.event.service.impl.RvepAddEventService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/app/events")
@@ -22,7 +19,8 @@ public class EventRestController {
 
     @ResponseBody
     @RequestMapping(value="/add/event",
-                    headers="Content-Type:application/json",
+                    method=RequestMethod.POST,
+                    headers="Content-Type=application/json",
                     produces="application/json",
                     consumes="application/json")
     public ResponseEntity<RvepAddEventResponse>
