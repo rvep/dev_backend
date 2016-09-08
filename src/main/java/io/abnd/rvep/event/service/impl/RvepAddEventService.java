@@ -49,6 +49,7 @@ public class RvepAddEventService implements AddEventService {
         // create event
         RvepEvent event = new RvepEvent();
         event.setCreatedOn(cal.getTime());
+        event.setEnabled((byte)1);
 
         // create event profile
         RvepEventProfile eventProfile = new RvepEventProfile();
@@ -57,6 +58,7 @@ public class RvepAddEventService implements AddEventService {
         eventProfile.setCreatedOn(event.getCreatedOn());
         eventProfile.setUpdatedOn(event.getCreatedOn());
         eventProfile.setRvepEvent(event);
+        eventProfile.setEnabled((byte)1);
 
         // get role
         RvepRole role = rvepRoleDAO.findByName("ROLE_CREATOR");
