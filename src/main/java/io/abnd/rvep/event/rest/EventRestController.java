@@ -37,7 +37,7 @@ public class EventRestController {
         response.setIsAdded(eventAdded);
 
         // return
-        return new ResponseEntity<RvepAddEventResponse>(response, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
 }
