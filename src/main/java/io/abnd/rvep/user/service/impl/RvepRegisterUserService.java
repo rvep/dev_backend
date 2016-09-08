@@ -13,6 +13,8 @@ import io.abnd.rvep.user.dao.intf.RvepUserProfileDAO;
 import io.abnd.rvep.user.model.RvepUser;
 import io.abnd.rvep.user.model.RvepUserProfile;
 import io.abnd.rvep.user.service.intf.RegisterUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.Calendar;
@@ -26,6 +28,7 @@ public class RvepRegisterUserService implements RegisterUserService {
     private RvepUserAuthProviderDAO rvepUserAuthProviderDAO;
     private RvepRoleDAO rvepRoleDAO;
     private RvepUserRoleDAO rvepUserRoleDAO;
+    private static final Logger logger = LoggerFactory.getLogger(RvepRegisterUserService.class);
 
     public RvepRegisterUserService(RvepUserProfileDAO rvepUserProfileDAO,
                                    AuthProviderDAO authProviderDAO,
@@ -81,6 +84,7 @@ public class RvepRegisterUserService implements RegisterUserService {
             rvepUserAuthProviderDAO.save(userAuthProvider);
             rvepUserRoleDAO.save(userRole);
         } catch (Exception e) {
+            logger.error(e.getMessage());
             return false;
         }
 
