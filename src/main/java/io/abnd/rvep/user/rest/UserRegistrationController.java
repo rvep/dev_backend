@@ -44,9 +44,7 @@ public class UserRegistrationController {
                     rvepRegisterUserService
                             .registerUser(request.getEmail(),
                                     request.getProvider()));
-
-            // get firebase idToken from header
-
+            
             // generate rvep api idtoken
             String idToken = jwtGenerator.generateIdToken(
                     request.getEmail(),
