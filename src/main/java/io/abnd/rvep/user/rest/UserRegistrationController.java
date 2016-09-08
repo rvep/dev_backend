@@ -1,6 +1,5 @@
 package io.abnd.rvep.user.rest;
 
-import io.abnd.rvep.security.service.impl.FirebaseAuthVerifier;
 import io.abnd.rvep.security.service.impl.RvepJwtGenerator;
 import io.abnd.rvep.user.model.impl.RvepUserRegistrationRequest;
 import io.abnd.rvep.user.model.impl.RvepUserRegistrationResponse;
@@ -17,14 +16,11 @@ import java.security.GeneralSecurityException;
 public class UserRegistrationController {
 
     private RvepRegisterUserService rvepRegisterUserService;
-    private FirebaseAuthVerifier fbAuthVerifier;
     private RvepJwtGenerator jwtGenerator;
 
     public UserRegistrationController(RvepRegisterUserService rvepRegisterUserService,
-                                      FirebaseAuthVerifier fbAuthVerifier,
                                       RvepJwtGenerator jwtGenerator) {
         this.rvepRegisterUserService = rvepRegisterUserService;
-        this.fbAuthVerifier = fbAuthVerifier;
         this.jwtGenerator = jwtGenerator;
     }
 
