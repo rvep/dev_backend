@@ -23,7 +23,7 @@ public class FirebaseConfig {
         // init firebase
         if (FirebaseApp.getApps().size() == 0) {
             FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setServiceAccount(new FileInputStream("src/main/resources/service-account.json"))
+                    .setServiceAccount(new FileInputStream("data/firebase/service-account.json"))
                     .setDatabaseUrl(this.fbProps.getFirebaseUrl())
                     .build();
 
