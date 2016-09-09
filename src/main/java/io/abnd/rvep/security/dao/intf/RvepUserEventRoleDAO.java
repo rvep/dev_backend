@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import io.abnd.rvep.security.model.RvepUserEventRole;
 
+import java.util.List;
+
 @Repository
 public interface RvepUserEventRoleDAO extends JpaRepository<RvepUserEventRole, Integer> {
 
@@ -14,5 +16,12 @@ public interface RvepUserEventRoleDAO extends JpaRepository<RvepUserEventRole, I
 	 * @return
 	 */
 	RvepUserEventRole findById(int id);
+
+	/**
+	 *
+	 * @param rvepUserId
+	 * @return
+	 */
+	List<RvepUserEventRole> findByRvepUserId(int rvepUserId);
 	
 }

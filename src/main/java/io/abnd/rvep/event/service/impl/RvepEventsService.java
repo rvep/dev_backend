@@ -4,41 +4,46 @@ import io.abnd.rvep.event.dao.intf.RvepEventDAO;
 import io.abnd.rvep.event.dao.intf.RvepEventProfileDAO;
 import io.abnd.rvep.event.model.RvepEvent;
 import io.abnd.rvep.event.model.RvepEventProfile;
-import io.abnd.rvep.event.service.intf.AddEventService;
+import io.abnd.rvep.event.service.intf.EventsService;
 import io.abnd.rvep.security.dao.intf.RvepRoleDAO;
 import io.abnd.rvep.security.dao.intf.RvepUserEventRoleDAO;
 import io.abnd.rvep.security.model.RvepRole;
 import io.abnd.rvep.security.model.RvepUserEventRole;
 import io.abnd.rvep.user.dao.intf.RvepUserProfileDAO;
+import io.abnd.rvep.user.model.RvepUser;
 import io.abnd.rvep.user.model.RvepUserProfile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 @Service
-public class RvepAddEventService implements AddEventService {
+public class RvepEventsService implements EventsService {
 
     private RvepEventDAO rvepEventDAO;
     private RvepEventProfileDAO rvepEventProfileDAO;
     private RvepUserProfileDAO rvepUserProfileDAO;
     private RvepRoleDAO rvepRoleDAO;
     private RvepUserEventRoleDAO rvepUserEventRoleDAO;
-    private static final Logger logger = LoggerFactory.getLogger(RvepAddEventService.class);
+    private static final Logger logger = LoggerFactory.getLogger(RvepEventsService.class);
 
-    public RvepAddEventService(RvepEventDAO rvepEventDAO,
-                               RvepEventProfileDAO rvepEventProfileDAO,
-                               RvepUserProfileDAO rvepUserProfileDAO,
-                               RvepRoleDAO rvepRoleDAO,
-                               RvepUserEventRoleDAO rvepUserEventRoleDAO) {
+    public RvepEventsService(RvepEventDAO rvepEventDAO,
+                             RvepEventProfileDAO rvepEventProfileDAO,
+                             RvepUserProfileDAO rvepUserProfileDAO,
+                             RvepRoleDAO rvepRoleDAO,
+                             RvepUserEventRoleDAO rvepUserEventRoleDAO) {
         this.rvepEventDAO = rvepEventDAO;
         this.rvepEventProfileDAO = rvepEventProfileDAO;
         this.rvepUserProfileDAO = rvepUserProfileDAO;
         this.rvepRoleDAO = rvepRoleDAO;
         this.rvepUserEventRoleDAO = rvepUserEventRoleDAO;
     }
+
+
 
     @Override
     @Transactional
@@ -81,6 +86,24 @@ public class RvepAddEventService implements AddEventService {
         }
 
         return true;
+    }
+
+    @Override
+    public List<RvepEventProfile> getAllEvents(String email) {
+        // get user id
+        RvepUser user = this.rvepUserProfileDAO.findByEmail(email).getRvepUser();
+        // get rvep user event role
+        List<RvepUserEventRole> userEventRoles = this.rvepUserEventRoleDAO.findByRvepUserId(user.getId());
+
+        // init return
+        List<RvepEventProfile> eventProfiles = new ArrayList<>();
+        userEventRoles.forEach((RvepUserEventRole role) -> {
+            int eventId = role.getRvepEvent().getId();
+            RvepEventProfile profile = this.rvepEventProfileDAO.findByRvepEventId(eventId);
+            eventProfiles.add(profile);
+        });
+
+        return  eventProfiles;
     }
 
 }
