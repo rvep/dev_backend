@@ -23,5 +23,13 @@ public interface RvepUserEventRoleDAO extends JpaRepository<RvepUserEventRole, I
 	 * @return
 	 */
 	List<RvepUserEventRole> findByRvepUserId(int rvepUserId);
+
+	/**
+	 *
+	 * @param rvepUserId
+	 * @param rvepEventId
+	 * @return
+	 */
+	List<RvepUserEventRole> findByRvepUserIdAndRvepEventId(int rvepUserId, int rvepEventId);
 	
 }

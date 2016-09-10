@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import io.abnd.rvep.event.model.RvepEventItem;
 
+import java.util.List;
+
 @Repository
 public interface RvepEventItemDAO extends JpaRepository<RvepEventItem, Integer> {
 
@@ -14,5 +16,12 @@ public interface RvepEventItemDAO extends JpaRepository<RvepEventItem, Integer> 
 	 * @return
 	 */
 	RvepEventItem findById(int id);
+
+    /**
+     *
+     * @param rvepEventId
+     * @return
+     */
+	List<RvepEventItem> findByRvepEventId(int rvepEventId);
 	
 }

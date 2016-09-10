@@ -3,7 +3,7 @@ package io.abnd.rvep.event.rest;
 import io.abnd.rvep.event.model.impl.RvepAddEventRequest;
 import io.abnd.rvep.event.model.impl.RvepAddEventResponse;
 import io.abnd.rvep.event.model.impl.RvepGetEventResponse;
-import io.abnd.rvep.event.service.impl.RvepEventsService;
+import io.abnd.rvep.event.service.impl.RvepEventService;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +16,9 @@ import java.util.List;
 @RequestMapping("/api/app/events")
 public class EventRestController {
 
-    private RvepEventsService rvepEventsService;
+    private RvepEventService rvepEventsService;
 
-    public EventRestController(RvepEventsService rvepEventsService) {
+    public EventRestController(RvepEventService rvepEventsService) {
         this.rvepEventsService = rvepEventsService;
     }
 
@@ -41,7 +41,7 @@ public class EventRestController {
             response.add(res);
         });
 
-        // retur
+        // return
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
