@@ -10,6 +10,7 @@ used for webclient [dev_frontend](https://github.com/rvep/dev_frontend)
 
 ## pre-install
 
+1. [create a firebase project](https://github.com/rvep/dev_backend/wiki/Create-a-Firebase-project)
 1. install jdk8
     - set `JAVA_HOME` environment variable
 1. install mariadb
