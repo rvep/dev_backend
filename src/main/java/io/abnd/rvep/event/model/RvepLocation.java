@@ -21,7 +21,7 @@ public class RvepLocation implements Serializable {
 
 	private String description;
 
-	private byte egnabled;
+	private byte enabled;
 
 	private float geolat;
 
@@ -53,11 +53,11 @@ public class RvepLocation implements Serializable {
 	}
 
 	public byte getEgnabled() {
-		return this.egnabled;
+		return this.enabled;
 	}
 
-	public void setEgnabled(byte egnabled) {
-		this.egnabled = egnabled;
+	public void setEgnabled(byte enabled) {
+		this.enabled = enabled;
 	}
 
 	public float getGeolat() {
