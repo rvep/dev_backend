@@ -194,7 +194,7 @@ CREATE TABLE rvep_location
     description VARCHAR(255) NOT NULL,
     geolat FLOAT,
     geolng FLOAT,
-    egnabled TINYINT(1) DEFAULT '1' NOT NULL
+    enabled TINYINT(1) DEFAULT '1' NOT NULL
 );
 CREATE TABLE rvep_event_item
 (
