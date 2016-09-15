@@ -1,5 +1,8 @@
 package io.abnd.rvep.event.rest;
 
+import io.abnd.rvep.event.model.RvepEventItem;
+import io.abnd.rvep.event.model.impl.RvepAddEventItemRequest;
+import io.abnd.rvep.event.model.impl.RvepAddEventItemResponse;
 import io.abnd.rvep.event.model.impl.RvepGetEventItemResponse;
 import io.abnd.rvep.event.service.impl.RvepEventItemService;
 import org.springframework.data.repository.query.Param;
@@ -21,12 +24,26 @@ public class EventItemRestController {
     }
 
     @ResponseBody
+    @RequestMapping(value="/add/item")
+    public ResponseEntity<RvepAddEventItemResponse>
+    addEventItem(@RequestBody RvepAddEventItemRequest rvepAddEventItemRequest) {
+        // init response
+        RvepAddEventItemResponse rvepAddEventItemResponse = new RvepAddEventItemResponse();
+
+        RvepEventItem rvepEventItem = rvepEventItemService.addEventItem(rvepAddEventItemRequest);
+        rvepAddEventItemResponse.setEventItemAdded(rvepEventItem != null ? true : false);
+
+        // return
+        return new ResponseEntity<RvepAddEventItemResponse>(rvepAddEventItemResponse, HttpStatus.OK);
+    }
+
+    @ResponseBody
     @RequestMapping(value="/get/all",
             method=RequestMethod.GET,
             headers="Content-Type=application/json",
             produces="application/json")
     public ResponseEntity<List<RvepGetEventItemResponse>>
-    getAllEvents(@PathVariable String profileId, @Param("email") String email) {
+    getAllEventItems(@PathVariable String profileId, @Param("email") String email) {
         // init response
         List<RvepGetEventItemResponse> response = new ArrayList<>();
 

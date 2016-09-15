@@ -52,11 +52,11 @@ public class RvepLocation implements Serializable {
 		this.description = description;
 	}
 
-	public byte getEgnabled() {
+	public byte getEnabled() {
 		return this.enabled;
 	}
 
-	public void setEgnabled(byte enabled) {
+	public void setEnabled(byte enabled) {
 		this.enabled = enabled;
 	}
 
